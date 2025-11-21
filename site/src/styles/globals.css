@@ -1,0 +1,244 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Custom Color Palette for Driveway Repairs */
+  /* Neutrals/Surface Colors */
+  --surface-50: #F9FAFB;
+  --surface-100: #F3F4F6;
+  --surface-200: #E5E7EB;
+  --surface-300: #D1D5DB;
+  --surface-700: #374151;
+  --surface-900: #111827;
+  
+  /* Primary Blues (Based on provided palette) */
+  --primary-50: #EBF5FD;
+  --primary-100: #D7EBF9;
+  --primary-200: #BFE2F8;
+  --primary-300: #8DCEE4;
+  --primary-500: #789BC1;
+  --primary-600: #5F85AD;
+  --primary-700: #4A6B8F;
+  --primary-800: #3A567D;
+  
+  /* Accent/Secondary (Warm contrast) */
+  --accent-500: #F97316;
+  --accent-600: #EA580C;
+  --accent-700: #C2410C;
+  
+  /* Design System Tokens */
+  --background: #FFFFFF;
+  --foreground: var(--surface-900);
+  --card: #FFFFFF;
+  --card-foreground: var(--surface-900);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--surface-900);
+  --primary: var(--primary-500);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--primary-200);
+  --secondary-foreground: var(--surface-900);
+  --muted: var(--surface-100);
+  --muted-foreground: var(--surface-700);
+  --accent: var(--accent-500);
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: var(--surface-300);
+  --input: transparent;
+  --input-background: var(--surface-50);
+  --switch-background: var(--surface-300);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--primary-500);
+  --chart-1: var(--primary-500);
+  --chart-2: var(--primary-300);
+  --chart-3: var(--accent-500);
+  --chart-4: var(--surface-700);
+  --chart-5: var(--primary-700);
+  --radius: 0.5rem;
+  --sidebar: var(--surface-50);
+  --sidebar-foreground: var(--surface-900);
+  --sidebar-primary: var(--primary-500);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: var(--surface-100);
+  --sidebar-accent-foreground: var(--surface-900);
+  --sidebar-border: var(--surface-300);
+  --sidebar-ring: var(--primary-500);
+}
+
+.dark {
+  --background: var(--surface-900);
+  --foreground: var(--surface-50);
+  --card: #1F2937;
+  --card-foreground: var(--surface-50);
+  --popover: #1F2937;
+  --popover-foreground: var(--surface-50);
+  --primary: var(--primary-500);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--primary-800);
+  --secondary-foreground: var(--surface-50);
+  --muted: #374151;
+  --muted-foreground: var(--surface-300);
+  --accent: var(--accent-500);
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #374151;
+  --input: #374151;
+  --ring: var(--primary-500);
+  --sidebar: #1F2937;
+  --sidebar-foreground: var(--surface-50);
+  --sidebar-primary: var(--primary-500);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: var(--surface-50);
+  --sidebar-border: #374151;
+  --sidebar-ring: var(--primary-500);
+}
+
+@theme inline {
+  /* Surface Colors */
+  --color-surface-50: var(--surface-50);
+  --color-surface-100: var(--surface-100);
+  --color-surface-200: var(--surface-200);
+  --color-surface-300: var(--surface-300);
+  --color-surface-700: var(--surface-700);
+  --color-surface-900: var(--surface-900);
+  
+  /* Primary Blues */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  
+  /* Accent Colors */
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  
+  /* Standard Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+@layer base {
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
