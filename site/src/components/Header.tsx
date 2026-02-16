@@ -18,7 +18,7 @@ export function Header({ onContactClick, location }: HeaderProps) {
 
   const navigation = [
     { name: "Services", href: "#services" },
-    { name: "Why Choose Us", href: "#why-choose-us" },
+    { name: "Why Choose Us", href: "#pricing" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" }
   ];

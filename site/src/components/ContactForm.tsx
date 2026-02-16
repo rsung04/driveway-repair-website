@@ -62,12 +62,13 @@ export function ContactForm({ location }: ContactFormProps) {
             Request a Fast Quote
           </h2>
           <p className="text-lg text-surface-700">
-            Can't call right now? Fill out this form and we'll get back to you within 30 minutes during business hours.
+            Can't call right now? Fill out this form and we'll get back to you <span className="font-bold text-accent-600 bg-accent-50 px-1 rounded">within 30 minutes</span>.
           </p>
         </div>
 
         <div className="bg-surface-50 rounded-lg p-6 sm:p-8 shadow-lg border border-surface-200">
           <form onSubmit={handleSubmit} className="space-y-6">
+            <input type="hidden" name="form-name" value="contact" />
             <div className="space-y-2">
               <Label htmlFor="name">Name *</Label>
               <Input

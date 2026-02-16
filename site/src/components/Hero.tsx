@@ -124,9 +124,14 @@ export function Hero({ onContactClick, location }: HeroProps) {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80"
-                alt="Driveway repair work in progress showing professional emergency response"
+                src="/hero-image.webp"
+                alt="Professional driveway technician - White glove emergency service"
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+                width="1584"
+                height="672"
+                decoding="async"
               />
             </div>
 

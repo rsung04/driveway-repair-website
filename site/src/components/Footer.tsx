@@ -56,7 +56,7 @@ export function Footer({ location }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#why-choose-us" className="text-surface-300 hover:text-primary-300 transition-colors">
+                <a href="#pricing" className="text-surface-300 hover:text-primary-300 transition-colors">
                   Why Choose Us
                 </a>
               </li>

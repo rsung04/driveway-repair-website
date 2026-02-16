@@ -17,14 +17,14 @@ export function WhyFixNow() {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-white" id="why-choose-us">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
             Leave It, or Fix It Now?
           </h2>
         </div>
-        
+
         {/* Comparison Table */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* Left Column - If You Leave It */}
@@ -46,7 +46,7 @@ export function WhyFixNow() {
               ))}
             </ul>
           </div>
-          
+
           {/* Right Column - If You Fix It Now */}
           <div className="bg-primary-50 rounded-lg p-6 border-2 border-primary-500">
             <div className="flex items-center gap-3 mb-6">
@@ -67,7 +67,7 @@ export function WhyFixNow() {
             </ul>
           </div>
         </div>
-        
+
         {/* Bottom Line */}
         <div className="text-center bg-surface-900 text-white p-6 rounded-lg">
           <p className="text-lg">

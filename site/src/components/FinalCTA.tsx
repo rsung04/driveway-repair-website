@@ -32,6 +32,31 @@ export function FinalCTA({ onContactClick, location }: FinalCTAProps) {
             size="lg"
             className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white"
             asChild
+            onClick={() => {
+              // Track phone click with Google Ads conversion tracking
+              if (typeof window !== "undefined" && (window as any).gtag_report_conversion) {
+                (window as any).gtag_report_conversion();
+              }
+
+              // Also track with dataLayer for additional analytics
+              if (typeof window !== "undefined" && (window as any).dataLayer) {
+                (window as any).dataLayer.push({
+                  event: "phone_click",
+                  event_category: "engagement",
+                  event_label: "final_cta_phone",
+                  value: 1,
+                  button_location: "final_cta"
+                });
+              }
+
+              // Track with Facebook Pixel
+              if (typeof window !== "undefined" && (window as any).fbq) {
+                (window as any).fbq("track", "Contact", {
+                  content_name: "Phone Click - Final CTA",
+                  button_location: "final_cta"
+                });
+              }
+            }}
           >
             <a href="tel:0432149176">
               <Phone className="w-5 h-5 mr-2" aria-hidden="true" />

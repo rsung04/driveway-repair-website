@@ -34,7 +34,7 @@ export function ProofSection({ location }: ProofSectionProps) {
     : "Driveways repaired across greater Sydney";
 
   return (
-    <section className="py-16 px-4 bg-primary-50">
+    <section className="py-16 px-4 bg-primary-50" id="testimonials">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
