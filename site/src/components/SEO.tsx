@@ -15,9 +15,7 @@ export function SEO({
     type = "website",
     noIndex = false
 }: SEOProps) {
-    const siteTitle = "Woollahra Driveway Repairs";
-    // If title doesn't strictly include the brand, we might want to append it, 
-    // but for now we'll take the title as is or let the pages control it.
+    const siteTitle = "Sydney Driveway Repair";
 
     return (
         <Helmet>

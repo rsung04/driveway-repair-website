@@ -1,11 +1,25 @@
 import { Button } from "./ui/button";
 import { Phone, ArrowRight } from "lucide-react";
+import { LocationData, formatSuburbList } from "../data/locations";
 
 interface HeroProps {
   onContactClick: () => void;
+  location?: LocationData;
 }
 
-export function Hero({ onContactClick }: HeroProps) {
+export function Hero({ onContactClick, location }: HeroProps) {
+  const headline = location
+    ? `Emergency Driveway Repair – 24/7 Rapid Response in ${location.name} & Surrounds`
+    : "Emergency Driveway Repair – 24/7 Rapid Response Across Sydney";
+
+  const subtext = location
+    ? `Serving ${formatSuburbList(location.suburbs)} – We're on-site fast.`
+    : "Serving all Sydney metropolitan areas – from the Eastern Suburbs to the Hills, North Shore to the South West. We're on-site fast.";
+
+  const urgencyText = location
+    ? `Priority emergency bookings available today in ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & ${location.keySuburbs[2]} – limited slots.`
+    : "Priority emergency bookings available today across Sydney – limited slots.";
+
   return (
     <section className="bg-gradient-to-br from-primary-50 via-white to-primary-100 py-12 px-4 sm:py-16 md:py-20">
       <div className="max-w-6xl mx-auto">
@@ -13,18 +27,18 @@ export function Hero({ onContactClick }: HeroProps) {
           {/* Content */}
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl text-surface-900">
-              Emergency Driveway Repair – 24/7 Rapid Response in Woollahra & Surrounds
+              {headline}
             </h1>
-            
+
             <p className="text-lg text-surface-700">
-              Serving Bellevue Hill, Darling Point, Double Bay, Edgecliff, Paddington, Point Piper, Rose Bay, Vaucluse, Watsons Bay, Woollahra, Riverdale, Hillside & Trumper – We're on-site fast.
+              {subtext}
             </p>
-            
+
             <ul className="space-y-3" aria-label="Key benefits">
               <li className="flex items-start gap-3 text-surface-900">
-                <svg 
-                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" 
-                  fill="currentColor" 
+                <svg
+                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
                 >
@@ -32,11 +46,11 @@ export function Hero({ onContactClick }: HeroProps) {
                 </svg>
                 <span>On-site fast for dangerous cracks, collapses & trip hazards</span>
               </li>
-              
+
               <li className="flex items-start gap-3 text-surface-900">
-                <svg 
-                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" 
-                  fill="currentColor" 
+                <svg
+                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
                 >
@@ -44,11 +58,11 @@ export function Hero({ onContactClick }: HeroProps) {
                 </svg>
                 <span>Safe temporary stabilisation + long-term repair options</span>
               </li>
-              
+
               <li className="flex items-start gap-3 text-surface-900">
-                <svg 
-                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" 
-                  fill="currentColor" 
+                <svg
+                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
                 >
@@ -56,11 +70,11 @@ export function Hero({ onContactClick }: HeroProps) {
                 </svg>
                 <span>Local, licensed driveway specialists – no random subcontractors</span>
               </li>
-              
+
               <li className="flex items-start gap-3 text-surface-900">
-                <svg 
-                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" 
-                  fill="currentColor" 
+                <svg
+                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
                 >
@@ -68,11 +82,11 @@ export function Hero({ onContactClick }: HeroProps) {
                 </svg>
                 <span>Upfront pricing before we start – no surprise add-ons</span>
               </li>
-              
+
               <li className="flex items-start gap-3 text-surface-900">
-                <svg 
-                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" 
-                  fill="currentColor" 
+                <svg
+                  className="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
                 >
@@ -81,10 +95,10 @@ export function Hero({ onContactClick }: HeroProps) {
                 <span>Emergency call-outs 7 days a week</span>
               </li>
             </ul>
-            
+
             <div className="space-y-3 pt-2">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white"
                 asChild
               >
@@ -93,7 +107,7 @@ export function Hero({ onContactClick }: HeroProps) {
                   Call Now for Emergency Repair
                 </a>
               </Button>
-              
+
               <div className="sm:ml-4 sm:inline-block">
                 <button
                   onClick={onContactClick}
@@ -105,17 +119,17 @@ export function Hero({ onContactClick }: HeroProps) {
               </div>
             </div>
           </div>
-          
+
           {/* Image */}
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80"
                 alt="Driveway repair work in progress showing professional emergency response"
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             {/* 24/7 Badge */}
             <div className="absolute top-4 right-4 bg-accent-500 text-white px-6 py-3 rounded-lg shadow-lg">
               <p className="text-sm">24/7</p>
@@ -123,11 +137,11 @@ export function Hero({ onContactClick }: HeroProps) {
             </div>
           </div>
         </div>
-        
+
         {/* Urgency Strip */}
         <div className="mt-8 bg-accent-500 text-white px-6 py-4 rounded-lg text-center">
           <p className="text-sm sm:text-base">
-            Priority emergency bookings available today in Bellevue Hill, Double Bay & Rose Bay – limited slots.
+            {urgencyText}
           </p>
         </div>
       </div>

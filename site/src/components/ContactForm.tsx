@@ -5,28 +5,37 @@ import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { toast } from "sonner@2.0.3";
 import { Send } from "lucide-react";
+import { LocationData } from "../data/locations";
 
-export function ContactForm() {
+interface ContactFormProps {
+  location?: LocationData;
+}
+
+export function ContactForm({ location }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     suburb: "",
     phone: "",
     issue: ""
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const suburbPlaceholder = location
+    ? `e.g., ${location.keySuburbs[0]}, ${location.keySuburbs[1]}`
+    : "e.g., Bondi, Parramatta, Cronulla";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast.success("Request received! We'll contact you within 30 minutes.", {
       description: "Check your phone for our call."
     });
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -34,7 +43,7 @@ export function ContactForm() {
       phone: "",
       issue: ""
     });
-    
+
     setIsSubmitting(false);
   };
 
@@ -56,7 +65,7 @@ export function ContactForm() {
             Can't call right now? Fill out this form and we'll get back to you within 30 minutes during business hours.
           </p>
         </div>
-        
+
         <div className="bg-surface-50 rounded-lg p-6 sm:p-8 shadow-lg border border-surface-200">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
@@ -72,7 +81,7 @@ export function ContactForm() {
                 placeholder="Your full name"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="suburb">Suburb *</Label>
               <Input
@@ -83,10 +92,10 @@ export function ContactForm() {
                 value={formData.suburb}
                 onChange={handleInputChange}
                 className="bg-white border-surface-300"
-                placeholder="e.g., Double Bay, Bellevue Hill"
+                placeholder={suburbPlaceholder}
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="phone">Phone *</Label>
               <Input
@@ -100,7 +109,7 @@ export function ContactForm() {
                 placeholder="0400 000 000"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="issue">Brief Issue Description</Label>
               <Textarea
@@ -113,9 +122,9 @@ export function ContactForm() {
                 placeholder="e.g., Large crack across driveway, concrete slab has sunk..."
               />
             </div>
-            
-            <Button 
-              type="submit" 
+
+            <Button
+              type="submit"
               className="w-full bg-accent-500 hover:bg-accent-600 text-white"
               disabled={isSubmitting}
             >
@@ -128,7 +137,7 @@ export function ContactForm() {
                 </>
               )}
             </Button>
-            
+
             <p className="text-xs text-surface-700 text-center">
               By submitting, you agree to be contacted about your repair request. We respect your privacy.
             </p>

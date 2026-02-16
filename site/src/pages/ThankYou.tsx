@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CheckCircle, Phone, MessageCircle, Home } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { SEO } from "../components/SEO";
 
 interface ThankYouProps {
   conversionType: "form" | "phone" | "whatsapp";
@@ -41,7 +42,6 @@ export function ThankYou({ conversionType }: ThankYouProps) {
     }
 
     // Track conversion with Facebook Pixel
-    // Replace 'FACEBOOK_PIXEL_ID' with your actual Facebook Pixel ID
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Lead", {
         content_name: "Driveway Repair Inquiry",
@@ -87,14 +87,12 @@ export function ThankYou({ conversionType }: ThankYouProps) {
     }
   };
 
-  import { SEO } from "../components/SEO";
-
   const message = getMessage();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100 flex items-center justify-center px-4 py-8">
       <SEO
-        title="Thank You | Woollahra Driveway Repairs"
+        title="Thank You | Sydney Driveway Repair"
         description="Thank you for your inquiry."
         noIndex={true}
       />
@@ -174,9 +172,9 @@ export function ThankYou({ conversionType }: ThankYouProps) {
               asChild
               className="bg-accent-500 hover:bg-accent-600 text-white w-full"
             >
-              <a href="tel:0432149176">
+              <a href="tel:1300123456">
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now: 0432 149 176
+                Call Now: 1300 123 456
               </a>
             </Button>
           </div>
@@ -191,8 +189,8 @@ export function ThankYou({ conversionType }: ThankYouProps) {
         <div className="mt-6 text-center text-sm text-surface-600">
           <p className="font-medium mb-1">Servicing:</p>
           <p>
-            Woollahra, Bellevue Hill, Double Bay, Rose Bay, Paddington,
-            Edgecliff, Darling Point, Point Piper, Vaucluse, Watsons Bay & surrounds
+            All Sydney metropolitan areas including Eastern Suburbs, North Shore,
+            Inner West, Western Sydney, Northern Beaches & more
           </p>
         </div>
       </div>

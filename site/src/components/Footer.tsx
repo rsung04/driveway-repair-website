@@ -1,7 +1,22 @@
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { LocationData, locations } from "../data/locations";
 
-export function Footer() {
+interface FooterProps {
+  location?: LocationData;
+}
+
+export function Footer({ location }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const brandName = location
+    ? `${location.name} Driveway Repairs`
+    : "Sydney Driveway Repair";
+  const areaDescription = location
+    ? `Your trusted local experts for emergency and scheduled driveway repairs across the ${location.name} LGA.`
+    : "Your trusted local experts for emergency and scheduled driveway repairs across greater Sydney.";
+  const serviceArea = location
+    ? `Servicing ${location.name} LGA & Surrounding Areas`
+    : "Servicing All Sydney Metropolitan Areas";
 
   return (
     <footer className="bg-surface-900 text-white">
@@ -9,22 +24,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-center md:text-left">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
+            <Link to="/" className="flex items-center gap-2 mb-4 justify-center md:justify-start">
               <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                <svg 
-                  className="w-6 h-6 text-white" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
                   aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
               </div>
-              <p>Woollahra Driveway Repairs</p>
-            </div>
+              <p>{brandName}</p>
+            </Link>
             <p className="text-sm text-surface-300 mb-4">
-              Your trusted local experts for emergency and scheduled driveway repairs across the Woollahra LGA.
+              {areaDescription}
             </p>
             <div className="flex gap-4 text-sm text-surface-300 justify-center md:justify-start">
               <span>ABN: 12 345 678 901</span>
@@ -54,6 +69,11 @@ export function Footer() {
                 <a href="#contact" className="text-surface-300 hover:text-primary-300 transition-colors">
                   Get a Quote
                 </a>
+              </li>
+              <li>
+                <Link to="/" className="text-surface-300 hover:text-primary-300 transition-colors">
+                  All Service Areas
+                </Link>
               </li>
             </ul>
           </div>
@@ -86,17 +106,17 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Mail className="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <a 
-                  href="mailto:repairs@woollahra-driveways.com.au" 
+                <a
+                  href="mailto:info@sydneydrivewayrepair.com"
                   className="text-surface-300 hover:text-primary-300 transition-colors break-all"
                 >
-                  repairs@woollahra-driveways.com.au
+                  info@sydneydrivewayrepair.com
                 </a>
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-surface-300">
-                  Servicing Woollahra LGA & Surrounding Areas
+                  {serviceArea}
                 </span>
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
@@ -111,22 +131,39 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Service Areas Grid */}
+        <div className="py-8 border-t border-surface-700">
+          <h3 className="text-center mb-6">Service Areas</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-sm">
+            {locations.map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/${loc.slug}`}
+                className={`text-center px-2 py-1.5 rounded transition-colors ${
+                  location?.slug === loc.slug
+                    ? "bg-primary-500 text-white"
+                    : "text-surface-300 hover:text-primary-300 hover:bg-surface-800"
+                }`}
+              >
+                {loc.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-surface-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-surface-400">
             <p>
-              © {currentYear} Woollahra Driveway Repairs. All rights reserved.
+              &copy; {currentYear} Sydney Driveway Repair. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary-300 transition-colors">
+              <Link to="/privacy" className="hover:text-primary-300 transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary-300 transition-colors">
+              </Link>
+              <Link to="/terms" className="hover:text-primary-300 transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-primary-300 transition-colors">
-                Sitemap
-              </a>
+              </Link>
             </div>
           </div>
         </div>
