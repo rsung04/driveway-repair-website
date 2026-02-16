@@ -17,9 +17,9 @@ export function EmergencyBanner() {
           className="bg-white text-accent-600 hover:bg-surface-50 flex-shrink-0"
           asChild
         >
-          <a href="tel:1300123456">
+          <a href="tel:0432149176">
             <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-            Call 1300 123 456
+            Call 0432 149 176
           </a>
         </Button>
       </div>

@@ -86,7 +86,7 @@ export function HowItWorks({ onContactClick, location }: HowItWorksProps) {
             className="bg-accent-500 hover:bg-accent-600 text-white text-sm sm:text-base whitespace-normal h-auto py-3 px-6"
             asChild
           >
-            <a href="tel:1300123456">
+            <a href="tel:0432149176">
               {ctaText}
             </a>
           </Button>
