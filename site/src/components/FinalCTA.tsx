@@ -1,25 +1,34 @@
 import { Button } from "./ui/button";
 import { Phone, MessageSquare } from "lucide-react";
+import { LocationData, formatSuburbList } from "../data/locations";
 
 interface FinalCTAProps {
   onContactClick: () => void;
+  location?: LocationData;
 }
 
-export function FinalCTA({ onContactClick }: FinalCTAProps) {
+export function FinalCTA({ onContactClick, location }: FinalCTAProps) {
+  const areaText = location
+    ? `the ${location.name} area`
+    : "Sydney";
+  const suburbLine = location
+    ? `Emergency driveway repairs in ${formatSuburbList(location.suburbs)}.`
+    : "Emergency driveway repairs across all Sydney metropolitan areas – Eastern Suburbs, North Shore, Inner West, Western Sydney, Northern Beaches & more.";
+
   return (
     <section className="py-16 px-4 bg-gradient-to-br from-primary-500 to-primary-700">
       <div className="max-w-4xl mx-auto text-center text-white space-y-8">
         <h2 className="text-3xl sm:text-4xl mb-4">
           Driveway Unsafe? Don't Wait Until Someone Gets Hurt.
         </h2>
-        
+
         <p className="text-lg text-primary-50 max-w-3xl mx-auto">
-          If your driveway has collapsed, cracked badly or become dangerous to walk or drive on, treat it as an emergency. 
-          We handle urgent driveway repairs across the Woollahra area every week – and we're ready to help you next.
+          If your driveway has collapsed, cracked badly or become dangerous to walk or drive on, treat it as an emergency.
+          We handle urgent driveway repairs across {areaText} every week – and we're ready to help you next.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <Button 
+          <Button
             size="lg"
             className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white"
             asChild
@@ -29,8 +38,8 @@ export function FinalCTA({ onContactClick }: FinalCTAProps) {
               Call Now for Emergency Repair
             </a>
           </Button>
-          
-          <Button 
+
+          <Button
             size="lg"
             variant="outline"
             className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-primary-600 bg-transparent"
@@ -40,10 +49,10 @@ export function FinalCTA({ onContactClick }: FinalCTAProps) {
             Request a Fast Quote
           </Button>
         </div>
-        
+
         <div className="pt-8 border-t border-primary-400">
           <p className="text-sm text-primary-100">
-            Emergency driveway repairs in Bellevue Hill, Darling Point, Double Bay, Edgecliff, Paddington, Point Piper, Rose Bay, Vaucluse, Watsons Bay, Woollahra, Riverdale, Hillside & Trumper.
+            {suburbLine}
           </p>
         </div>
       </div>

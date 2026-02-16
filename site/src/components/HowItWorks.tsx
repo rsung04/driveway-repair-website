@@ -1,11 +1,17 @@
 import { Button } from "./ui/button";
 import { Phone, Search, Shield, FileText } from "lucide-react";
+import { LocationData } from "../data/locations";
 
 interface HowItWorksProps {
   onContactClick: () => void;
+  location?: LocationData;
 }
 
-export function HowItWorks({ onContactClick }: HowItWorksProps) {
+export function HowItWorks({ onContactClick, location }: HowItWorksProps) {
+  const ctaText = location
+    ? `Call for Emergency Help in ${location.keySuburbs[0]}, ${location.keySuburbs[1]}, ${location.keySuburbs[2]} & Nearby`
+    : "Call for Emergency Driveway Help Anywhere in Sydney";
+
   const steps = [
     {
       icon: Phone,
@@ -41,7 +47,7 @@ export function HowItWorks({ onContactClick }: HowItWorksProps) {
             How Our Emergency Driveway Repair Works
           </h2>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -49,12 +55,12 @@ export function HowItWorks({ onContactClick }: HowItWorksProps) {
               <div key={index} className="relative">
                 {/* Connector Line - hidden on mobile */}
                 {index < steps.length - 1 && (
-                  <div 
+                  <div
                     className="hidden lg:block absolute top-12 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-0.5 bg-primary-200"
                     aria-hidden="true"
                   />
                 )}
-                
+
                 <div className="relative text-center">
                   <div className="inline-flex items-center justify-center w-24 h-24 bg-primary-500 text-white rounded-full mb-4 relative z-10">
                     <Icon className="w-10 h-10" aria-hidden="true" />
@@ -73,15 +79,15 @@ export function HowItWorks({ onContactClick }: HowItWorksProps) {
             );
           })}
         </div>
-        
+
         <div className="text-center">
-          <Button 
+          <Button
             size="lg"
             className="bg-accent-500 hover:bg-accent-600 text-white text-sm sm:text-base whitespace-normal h-auto py-3 px-6"
             asChild
           >
             <a href="tel:1300123456">
-              Call for Emergency Help in Bellevue Hill, Double Bay, Rose Bay & Nearby
+              {ctaText}
             </a>
           </Button>
         </div>

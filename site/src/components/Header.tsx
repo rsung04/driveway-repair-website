@@ -1,13 +1,20 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import { LocationData } from "../data/locations";
 
 interface HeaderProps {
   onContactClick: () => void;
+  location?: LocationData;
 }
 
-export function Header({ onContactClick }: HeaderProps) {
+export function Header({ onContactClick, location }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const brandName = location
+    ? `${location.name} Driveway Repairs`
+    : "Sydney Driveway Repair";
 
   const navigation = [
     { name: "Services", href: "#services" },
@@ -19,7 +26,7 @@ export function Header({ onContactClick }: HeaderProps) {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    
+
     if (href === "#contact") {
       onContactClick();
     } else {
@@ -35,12 +42,12 @@ export function Header({ onContactClick }: HeaderProps) {
       <nav className="max-w-6xl mx-auto px-4 py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-              <svg 
-                className="w-6 h-6 text-white" 
-                fill="none" 
-                viewBox="0 0 24 24" 
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
                 aria-hidden="true"
               >
@@ -48,10 +55,10 @@ export function Header({ onContactClick }: HeaderProps) {
               </svg>
             </div>
             <div>
-              <p className="text-surface-900">Woollahra Driveway Repairs</p>
+              <p className="text-surface-900">{brandName}</p>
               <p className="text-xs text-surface-700">Emergency Service Available</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
@@ -65,7 +72,7 @@ export function Header({ onContactClick }: HeaderProps) {
                 {item.name}
               </a>
             ))}
-            <Button 
+            <Button
               className="bg-accent-500 hover:bg-accent-600 text-white"
               onClick={onContactClick}
             >
@@ -103,7 +110,7 @@ export function Header({ onContactClick }: HeaderProps) {
                 {item.name}
               </a>
             ))}
-            <Button 
+            <Button
               className="w-full bg-accent-500 hover:bg-accent-600 text-white"
               onClick={() => {
                 setMobileMenuOpen(false);

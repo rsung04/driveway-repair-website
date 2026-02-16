@@ -1,37 +1,52 @@
 import { Card, CardContent } from "./ui/card";
 import { Quote } from "lucide-react";
+import { LocationData } from "../data/locations";
 
-export function ProofSection() {
-  const testimonials = [
-    {
-      text: "Called at 7am from Rose Bay, they had the driveway safe before school pickup. Clear, honest and tidy.",
-      author: "Sarah",
-      location: "Rose Bay"
-    },
-    {
-      text: "Professional team who knew exactly what to do. They stabilised our collapsed driveway edge within hours and came back to finish the permanent repair the next week.",
-      author: "Michael",
-      location: "Bellevue Hill"
-    },
-    {
-      text: "Transparent pricing, no hidden costs. They walked us through every option and let us decide what worked for our budget.",
-      author: "Jennifer",
-      location: "Double Bay"
-    }
-  ];
+interface ProofSectionProps {
+  location?: LocationData;
+}
+
+const defaultTestimonials = [
+  {
+    text: "Called at 7am, they had the driveway safe before school pickup. Clear, honest and tidy.",
+    author: "Sarah",
+    location: "Eastern Suburbs",
+  },
+  {
+    text: "Professional team who knew exactly what to do. They stabilised our collapsed driveway edge within hours and came back to finish the permanent repair the next week.",
+    author: "Michael",
+    location: "North Shore",
+  },
+  {
+    text: "Transparent pricing, no hidden costs. They walked us through every option and let us decide what worked for our budget.",
+    author: "Jennifer",
+    location: "Inner West",
+  },
+];
+
+export function ProofSection({ location }: ProofSectionProps) {
+  const testimonials = location ? location.testimonials : defaultTestimonials;
+  const trustLine = location
+    ? `Trusted by homeowners across ${location.keySuburbs[0]}, ${location.keySuburbs[1]}, ${location.keySuburbs[2]} & surrounding suburbs.`
+    : "Trusted by homeowners across Sydney's Eastern Suburbs, North Shore, Inner West & beyond.";
+  const metricLine = location
+    ? `Driveways repaired across the ${location.name} area`
+    : "Driveways repaired across greater Sydney";
 
   return (
     <section className="py-16 px-4 bg-primary-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
-            Why Homeowners in Woollahra Trust Us
+            {location
+              ? `Why Homeowners in ${location.name} Trust Us`
+              : "Why Sydney Homeowners Trust Us"}
           </h2>
           <p className="text-lg text-surface-700">
             Local, reliable and built on repeat work and referrals.
           </p>
         </div>
-        
+
         {/* Testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
@@ -53,19 +68,19 @@ export function ProofSection() {
             </Card>
           ))}
         </div>
-        
+
         {/* Trust Line */}
         <div className="text-center mb-8">
           <p className="text-surface-900">
-            Trusted by homeowners across Bellevue Hill, Double Bay, Vaucluse & surrounding suburbs.
+            {trustLine}
           </p>
         </div>
-        
+
         {/* Proof Metric */}
         <div className="text-center bg-white p-8 rounded-lg shadow-sm">
           <p className="text-4xl sm:text-5xl text-primary-600 mb-2">500+</p>
           <p className="text-surface-900">
-            Driveways repaired across the Woollahra area
+            {metricLine}
           </p>
         </div>
       </div>
