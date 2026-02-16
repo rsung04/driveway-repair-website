@@ -102,7 +102,7 @@ export function Hero({ onContactClick, location }: HeroProps) {
                 className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white"
                 asChild
               >
-                <a href="tel:1300123456">
+                <a href="tel:0432149176">
                   <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
                   Call Now for Emergency Repair
                 </a>
