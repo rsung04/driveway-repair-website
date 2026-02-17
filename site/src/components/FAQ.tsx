@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
+import { Helmet } from "react-helmet-async";
 import { LocationData, formatSuburbList } from "../data/locations";
 
 interface FAQProps {
@@ -39,32 +40,50 @@ export function FAQ({ location }: FAQProps) {
     },
   ];
 
-  return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
-            Emergency Driveway Repair – FAQs
-          </h2>
-        </div>
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
 
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="bg-surface-50 rounded-lg px-6 border border-surface-200"
-            >
-              <AccordionTrigger className="text-left text-surface-900 hover:text-primary-600">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-surface-700">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
-    </section>
+  return (
+    <>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
+              Emergency Driveway Repair – FAQs
+            </h2>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-surface-50 rounded-lg px-6 border border-surface-200"
+              >
+                <AccordionTrigger className="text-left text-surface-900 hover:text-primary-600">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-surface-700">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+    </>
   );
 }

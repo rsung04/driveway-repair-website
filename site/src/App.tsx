@@ -1,4 +1,4 @@
-import { Routes, Route, useParams, Navigate } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
 import { SEO } from "./components/SEO";
 import { EmergencyBanner } from "./components/EmergencyBanner";
@@ -21,6 +21,7 @@ import { LocationData, getLocationBySlug } from "./data/locations";
 const ThankYou = lazy(() => import("./pages/ThankYou").then(m => ({ default: m.ThankYou })));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy").then(m => ({ default: m.PrivacyPolicy })));
 const TermsOfService = lazy(() => import("./pages/TermsOfService").then(m => ({ default: m.TermsOfService })));
+const NotFound = lazy(() => import("./pages/NotFound").then(m => ({ default: m.NotFound })));
 
 interface LandingPageProps {
   location?: LocationData;
@@ -57,6 +58,7 @@ function LandingPage({ location }: LandingPageProps) {
         title={seoTitle}
         description={seoDescription}
         canonicalUrl={canonicalUrl}
+        location={location}
       />
 
       <EmergencyBanner />
@@ -92,7 +94,7 @@ function LocationPage() {
   const location = slug ? getLocationBySlug(slug) : undefined;
 
   if (!location) {
-    return <Navigate to="/" replace />;
+    return <Suspense fallback={<div className="min-h-screen" />}><NotFound /></Suspense>;
   }
 
   return <LandingPage location={location} />;
@@ -108,6 +110,7 @@ export default function App() {
       <Route path="/privacy" element={<Suspense fallback={<div className="min-h-screen" />}><PrivacyPolicy /></Suspense>} />
       <Route path="/terms" element={<Suspense fallback={<div className="min-h-screen" />}><TermsOfService /></Suspense>} />
       <Route path="/:slug" element={<LocationPage />} />
+      <Route path="*" element={<Suspense fallback={<div className="min-h-screen" />}><NotFound /></Suspense>} />
     </Routes>
   );
 }

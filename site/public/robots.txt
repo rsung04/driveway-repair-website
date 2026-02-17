@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you
+Disallow: /thank-you-phone
+Disallow: /thank-you-whatsapp
 
 Sitemap: https://sydneydrivewayrepair.com/sitemap.xml

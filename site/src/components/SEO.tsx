@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { LocationData } from "../data/locations";
 
 interface SEOProps {
     title: string;
@@ -6,6 +7,7 @@ interface SEOProps {
     canonicalUrl?: string;
     type?: string;
     noIndex?: boolean;
+    location?: LocationData;
 }
 
 export function SEO({
@@ -13,9 +15,30 @@ export function SEO({
     description,
     canonicalUrl = "https://sydneydrivewayrepair.com",
     type = "website",
-    noIndex = false
+    noIndex = false,
+    location
 }: SEOProps) {
     const siteTitle = "Sydney Driveway Repair";
+
+    const locationSchema = location ? {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": `Sydney Driveway Repair – ${location.name}`,
+        "description": `Emergency driveway repair services in ${location.name} and surrounding suburbs. 24/7 rapid response for dangerous cracks, collapses and trip hazards.`,
+        "telephone": "+61432149176",
+        "url": `https://sydneydrivewayrepair.com/${location.slug}`,
+        "image": "https://sydneydrivewayrepair.com/hero-image.webp",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": location.name,
+            "addressRegion": "NSW",
+            "addressCountry": "AU"
+        },
+        "areaServed": location.suburbs.map(suburb => ({
+            "@type": "City",
+            "name": suburb
+        }))
+    } : null;
 
     return (
         <Helmet>
@@ -36,6 +59,10 @@ export function SEO({
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
+
+            {locationSchema && (
+                <script type="application/ld+json">{JSON.stringify(locationSchema)}</script>
+            )}
         </Helmet>
     );
 }
