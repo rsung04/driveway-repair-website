@@ -39,11 +39,13 @@ export function FAQ({ location }: FAQProps) {
       answer: suburbAnswer,
     },
   ];
+  const localFaqs = location?.richContent?.localFaqs ?? [];
+  const allFaqs = [...faqs, ...localFaqs];
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: allFaqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -67,7 +69,7 @@ export function FAQ({ location }: FAQProps) {
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {allFaqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}

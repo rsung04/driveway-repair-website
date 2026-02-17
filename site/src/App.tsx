@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { EmergencyOffer } from "./components/EmergencyOffer";
 import { WhatWeFix } from "./components/WhatWeFix";
+import { LocalContent } from "./components/LocalContent";
 import { HowItWorks } from "./components/HowItWorks";
 import { ProofSection } from "./components/ProofSection";
 import { WhyFixNow } from "./components/WhyFixNow";
@@ -68,6 +69,7 @@ function LandingPage({ location }: LandingPageProps) {
         <Hero onContactClick={scrollToContact} location={location} />
         <EmergencyOffer onContactClick={scrollToContact} />
         <WhatWeFix onContactClick={scrollToContact} />
+        <LocalContent location={location} />
         <HowItWorks onContactClick={scrollToContact} location={location} />
         <ProofSection location={location} />
         <WhyFixNow />
