@@ -60,6 +60,7 @@ function LandingPage({ location }: LandingPageProps) {
         description={seoDescription}
         canonicalUrl={canonicalUrl}
         location={location}
+        noIndex={!!location && !location.richContent}
       />
 
       <EmergencyBanner />
