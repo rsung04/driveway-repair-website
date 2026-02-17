@@ -124,13 +124,15 @@ export function Hero({ onContactClick, location }: HeroProps) {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="/hero-image.webp"
+                src="/hero-image-960.webp"
+                srcSet="/hero-image-640.webp 640w, /hero-image-960.webp 960w, /hero-image-1280.webp 1280w, /hero-image-1584.webp 1584w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 alt="Professional driveway technician - White glove emergency service"
                 className="w-full h-full object-cover"
                 loading="eager"
                 fetchPriority="high"
-                width="1584"
-                height="672"
+                width="960"
+                height="720"
                 decoding="async"
               />
             </div>

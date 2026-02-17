@@ -6,12 +6,14 @@ import { Label } from "./ui/label";
 import { toast } from "sonner@2.0.3";
 import { Send } from "lucide-react";
 import { LocationData } from "../data/locations";
+import { useNavigate } from "react-router-dom";
 
 interface ContactFormProps {
   location?: LocationData;
 }
 
 export function ContactForm({ location }: ContactFormProps) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     suburb: "",
@@ -28,23 +30,42 @@ export function ContactForm({ location }: ContactFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    try {
+      const formBody = new URLSearchParams({
+        "form-name": "contact",
+        name: formData.name,
+        suburb: formData.suburb,
+        phone: formData.phone,
+        issue: formData.issue
+      }).toString();
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: formBody
+      });
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
 
-    toast.success("Request received! We'll contact you within 30 minutes.", {
-      description: "Check your phone for our call."
-    });
-
-    // Reset form
-    setFormData({
-      name: "",
-      suburb: "",
-      phone: "",
-      issue: ""
-    });
-
-    setIsSubmitting(false);
+      toast.success("Request received! We'll contact you within 30 minutes.", {
+        description: "Check your phone for our call."
+      });
+      navigate("/thank-you");
+      setFormData({
+        name: "",
+        suburb: "",
+        phone: "",
+        issue: ""
+      });
+    } catch (error) {
+      console.error("Netlify form submission error:", error);
+      toast.error("Something went wrong. Please call us directly at 0432 149 176.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (

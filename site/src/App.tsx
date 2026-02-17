@@ -15,11 +15,12 @@ import { ContactForm } from "./components/ContactForm";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
 import { ServiceAreas } from "./components/ServiceAreas";
-import { useRef, useEffect } from "react";
-import { ThankYou } from "./pages/ThankYou";
-import { PrivacyPolicy } from "./pages/PrivacyPolicy";
-import { TermsOfService } from "./pages/TermsOfService";
+import { useRef, useEffect, lazy, Suspense } from "react";
 import { LocationData, getLocationBySlug } from "./data/locations";
+
+const ThankYou = lazy(() => import("./pages/ThankYou").then(m => ({ default: m.ThankYou })));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy").then(m => ({ default: m.PrivacyPolicy })));
+const TermsOfService = lazy(() => import("./pages/TermsOfService").then(m => ({ default: m.TermsOfService })));
 
 interface LandingPageProps {
   location?: LocationData;
@@ -101,11 +102,11 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/thank-you" element={<ThankYou conversionType="form" />} />
-      <Route path="/thank-you-phone" element={<ThankYou conversionType="phone" />} />
-      <Route path="/thank-you-whatsapp" element={<ThankYou conversionType="whatsapp" />} />
-      <Route path="/privacy" element={<PrivacyPolicy />} />
-      <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/thank-you" element={<Suspense fallback={<div className="min-h-screen" />}><ThankYou conversionType="form" /></Suspense>} />
+      <Route path="/thank-you-phone" element={<Suspense fallback={<div className="min-h-screen" />}><ThankYou conversionType="phone" /></Suspense>} />
+      <Route path="/thank-you-whatsapp" element={<Suspense fallback={<div className="min-h-screen" />}><ThankYou conversionType="whatsapp" /></Suspense>} />
+      <Route path="/privacy" element={<Suspense fallback={<div className="min-h-screen" />}><PrivacyPolicy /></Suspense>} />
+      <Route path="/terms" element={<Suspense fallback={<div className="min-h-screen" />}><TermsOfService /></Suspense>} />
       <Route path="/:slug" element={<LocationPage />} />
     </Routes>
   );
