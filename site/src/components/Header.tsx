@@ -72,6 +72,10 @@ export function Header({ onContactClick, location }: HeaderProps) {
                 {item.name}
               </a>
             ))}
+            <a href="tel:0432149176" className="text-accent-600 font-semibold hover:text-accent-700 transition-colors flex items-center gap-1">
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              0432 149 176
+            </a>
             <Button
               className="bg-accent-500 hover:bg-accent-600 text-white"
               onClick={onContactClick}
@@ -110,6 +114,10 @@ export function Header({ onContactClick, location }: HeaderProps) {
                 {item.name}
               </a>
             ))}
+            <a href="tel:0432149176" className="text-accent-600 font-semibold hover:text-accent-700 transition-colors flex items-center gap-1 py-2">
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              0432 149 176
+            </a>
             <Button
               className="w-full bg-accent-500 hover:bg-accent-600 text-white"
               onClick={() => {
