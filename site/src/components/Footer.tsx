@@ -115,9 +115,10 @@ export function Footer({ location }: FooterProps) {
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <span className="text-surface-300">
-                  {serviceArea}
-                </span>
+                <div className="text-surface-300">
+                  <p>Sydney, NSW, Australia</p>
+                  <p className="text-xs text-surface-400">{serviceArea}</p>
+                </div>
               </li>
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Clock className="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" aria-hidden="true" />

@@ -25,6 +25,7 @@ export interface LocationData {
   name: string;
   slug: string;
   region: string;
+  postalCode?: string;
   suburbs: string[];
   keySuburbs: [string, string, string];
   testimonials: {
@@ -58,8 +59,9 @@ function generateTestimonials(keySuburbs: [string, string, string]): LocationDat
 export const locations: LocationData[] = [
   {
     name: "Woollahra",
-    slug: "woollahra",
+    slug: "driveway-repair-woollahra",
     region: "Eastern Suburbs",
+    postalCode: "2025",
     suburbs: [
       "Bellevue Hill", "Darling Point", "Double Bay", "Edgecliff",
       "Paddington", "Point Piper", "Rose Bay", "Vaucluse",
@@ -177,7 +179,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Waverley",
-    slug: "waverley",
+    slug: "driveway-repair-waverley",
     region: "Eastern Suburbs",
     suburbs: [
       "Bondi", "Bondi Beach", "Bondi Junction", "Bronte",
@@ -189,7 +191,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Randwick",
-    slug: "randwick",
+    slug: "driveway-repair-randwick",
     region: "Eastern Suburbs",
     suburbs: [
       "Randwick", "Coogee", "Maroubra", "Clovelly", "Kensington",
@@ -201,7 +203,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Bayside",
-    slug: "bayside",
+    slug: "driveway-repair-bayside",
     region: "Southern Sydney",
     suburbs: [
       "Arncliffe", "Banksia", "Bardwell Park", "Bardwell Valley",
@@ -216,8 +218,9 @@ export const locations: LocationData[] = [
   },
   {
     name: "City of Sydney",
-    slug: "sydney-city",
+    slug: "driveway-repair-sydney-city",
     region: "Inner Sydney",
+    postalCode: "2000",
     suburbs: [
       "Sydney CBD", "Surry Hills", "Darlinghurst", "Potts Point",
       "Redfern", "Waterloo", "Zetland", "Glebe", "Ultimo",
@@ -338,7 +341,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Inner West",
-    slug: "inner-west",
+    slug: "driveway-repair-inner-west",
     region: "Inner West",
     suburbs: [
       "Marrickville", "Newtown", "Balmain", "Leichhardt",
@@ -352,7 +355,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Burwood",
-    slug: "burwood",
+    slug: "driveway-repair-burwood",
     region: "Inner West",
     suburbs: [
       "Burwood", "Croydon", "Croydon Park", "Enfield", "Strathfield South",
@@ -362,7 +365,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Strathfield",
-    slug: "strathfield",
+    slug: "driveway-repair-strathfield",
     region: "Inner West",
     suburbs: [
       "Strathfield", "Strathfield South", "Homebush",
@@ -373,7 +376,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Canada Bay",
-    slug: "canada-bay",
+    slug: "driveway-repair-canada-bay",
     region: "Inner West",
     suburbs: [
       "Concord", "Rhodes", "Five Dock", "Drummoyne",
@@ -386,8 +389,9 @@ export const locations: LocationData[] = [
   },
   {
     name: "North Sydney",
-    slug: "north-sydney",
+    slug: "driveway-repair-north-sydney",
     region: "Lower North Shore",
+    postalCode: "2060",
     suburbs: [
       "North Sydney", "Cremorne", "Cremorne Point", "Crows Nest",
       "Kirribilli", "Lavender Bay", "McMahons Point", "Milsons Point",
@@ -505,7 +509,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Mosman",
-    slug: "mosman",
+    slug: "driveway-repair-mosman",
     region: "Lower North Shore",
     suburbs: [
       "Mosman", "Balmoral", "Beauty Point", "Clifton Gardens",
@@ -516,7 +520,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Lane Cove",
-    slug: "lane-cove",
+    slug: "driveway-repair-lane-cove",
     region: "Lower North Shore",
     suburbs: [
       "Lane Cove", "Lane Cove North", "Lane Cove West",
@@ -528,7 +532,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Willoughby",
-    slug: "willoughby",
+    slug: "driveway-repair-willoughby",
     region: "Lower North Shore",
     suburbs: [
       "Willoughby", "Chatswood", "Artarmon", "Castlecrag",
@@ -540,7 +544,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Hunters Hill",
-    slug: "hunters-hill",
+    slug: "driveway-repair-hunters-hill",
     region: "Lower North Shore",
     suburbs: [
       "Hunters Hill", "Woolwich", "Henley", "Huntleys Cove",
@@ -551,7 +555,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Ku-ring-gai",
-    slug: "ku-ring-gai",
+    slug: "driveway-repair-ku-ring-gai",
     region: "Upper North Shore",
     suburbs: [
       "Gordon", "Killara", "Lindfield", "Roseville", "Pymble",
@@ -564,7 +568,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Hornsby",
-    slug: "hornsby",
+    slug: "driveway-repair-hornsby",
     region: "Upper North Shore",
     suburbs: [
       "Hornsby", "Wahroonga", "Turramurra", "Asquith", "Berowra",
@@ -577,7 +581,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Ryde",
-    slug: "ryde",
+    slug: "driveway-repair-ryde",
     region: "Northern Sydney",
     suburbs: [
       "Ryde", "Gladesville", "Meadowbank", "West Ryde",
@@ -590,8 +594,9 @@ export const locations: LocationData[] = [
   },
   {
     name: "Northern Beaches",
-    slug: "northern-beaches",
+    slug: "driveway-repair-northern-beaches",
     region: "Northern Beaches",
+    postalCode: "2095",
     suburbs: [
       "Manly", "Dee Why", "Mona Vale", "Avalon", "Freshwater",
       "Brookvale", "Narrabeen", "Collaroy", "Curl Curl",
@@ -714,8 +719,9 @@ export const locations: LocationData[] = [
   },
   {
     name: "Parramatta",
-    slug: "parramatta",
+    slug: "driveway-repair-parramatta",
     region: "Western Sydney",
+    postalCode: "2150",
     suburbs: [
       "Parramatta", "Epping", "Eastwood", "Dundas", "Carlingford",
       "Ermington", "Rydalmere", "Oatlands", "North Rocks",
@@ -835,7 +841,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Cumberland",
-    slug: "cumberland",
+    slug: "driveway-repair-cumberland",
     region: "Western Sydney",
     suburbs: [
       "Auburn", "Granville", "Merrylands", "Guildford",
@@ -848,7 +854,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Blacktown",
-    slug: "blacktown",
+    slug: "driveway-repair-blacktown",
     region: "Western Sydney",
     suburbs: [
       "Blacktown", "Seven Hills", "Mount Druitt", "Rooty Hill",
@@ -861,7 +867,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "The Hills",
-    slug: "the-hills",
+    slug: "driveway-repair-the-hills",
     region: "Hills District",
     suburbs: [
       "Castle Hill", "Baulkham Hills", "Bella Vista", "Kellyville",
@@ -874,7 +880,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Penrith",
-    slug: "penrith",
+    slug: "driveway-repair-penrith",
     region: "Western Sydney",
     suburbs: [
       "Penrith", "Kingswood", "Emu Plains", "Glenmore Park",
@@ -887,7 +893,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Fairfield",
-    slug: "fairfield",
+    slug: "driveway-repair-fairfield",
     region: "South Western Sydney",
     suburbs: [
       "Fairfield", "Cabramatta", "Canley Vale", "Fairfield Heights",
@@ -900,7 +906,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Liverpool",
-    slug: "liverpool",
+    slug: "driveway-repair-liverpool",
     region: "South Western Sydney",
     suburbs: [
       "Liverpool", "Casula", "Moorebank", "Prestons",
@@ -913,7 +919,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Campbelltown",
-    slug: "campbelltown",
+    slug: "driveway-repair-campbelltown",
     region: "South Western Sydney",
     suburbs: [
       "Campbelltown", "Ingleburn", "Macquarie Fields", "Minto",
@@ -925,7 +931,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Camden",
-    slug: "camden",
+    slug: "driveway-repair-camden",
     region: "South Western Sydney",
     suburbs: [
       "Camden", "Narellan", "Oran Park", "Leppington",
@@ -937,7 +943,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Canterbury-Bankstown",
-    slug: "canterbury-bankstown",
+    slug: "driveway-repair-canterbury-bankstown",
     region: "South Western Sydney",
     suburbs: [
       "Canterbury", "Bankstown", "Lakemba", "Punchbowl",
@@ -949,7 +955,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Georges River",
-    slug: "georges-river",
+    slug: "driveway-repair-georges-river",
     region: "Southern Sydney",
     suburbs: [
       "Hurstville", "Beverly Hills", "Blakehurst",
@@ -962,7 +968,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Sutherland",
-    slug: "sutherland",
+    slug: "driveway-repair-sutherland",
     region: "Southern Sydney",
     suburbs: [
       "Sutherland", "Cronulla", "Miranda", "Caringbah", "Engadine",
@@ -977,7 +983,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Hawkesbury",
-    slug: "hawkesbury",
+    slug: "driveway-repair-hawkesbury",
     region: "Western Sydney",
     suburbs: [
       "Windsor", "Richmond", "North Richmond", "Kurrajong",
@@ -989,7 +995,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Blue Mountains",
-    slug: "blue-mountains",
+    slug: "driveway-repair-blue-mountains",
     region: "Blue Mountains",
     suburbs: [
       "Katoomba", "Leura", "Wentworth Falls", "Springwood",
@@ -1001,7 +1007,7 @@ export const locations: LocationData[] = [
   },
   {
     name: "Wollondilly",
-    slug: "wollondilly",
+    slug: "driveway-repair-wollondilly",
     region: "South Western Sydney",
     suburbs: [
       "Picton", "Tahmoor", "Thirlmere", "Bargo", "The Oaks",

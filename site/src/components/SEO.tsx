@@ -32,6 +32,7 @@ export function SEO({
             "@type": "PostalAddress",
             "addressLocality": location.name,
             "addressRegion": "NSW",
+            ...(location.postalCode && { "postalCode": location.postalCode }),
             "addressCountry": "AU"
         },
         "areaServed": location.suburbs.map(suburb => ({
