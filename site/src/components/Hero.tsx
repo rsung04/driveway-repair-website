@@ -8,9 +8,10 @@ interface HeroProps {
 }
 
 export function Hero({ onContactClick, location }: HeroProps) {
-  const headline = location
-    ? `Emergency driveway repair for cracked, sunken, or collapsed drives in ${location.name}`
-    : "Emergency driveway repair for cracked, sunken, or collapsed drives in Sydney";
+  const headline = location?.h1
+    ?? (location
+      ? `Emergency driveway repair for cracked, sunken, or collapsed drives in ${location.name}`
+      : "Emergency driveway repair for cracked, sunken, or collapsed drives in Sydney");
 
   const subtext = location
     ? `If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day in ${location.name}, then quote the lasting repair before work starts. Serving ${formatSuburbList(location.keySuburbs)}. Call 0480 893 502 or Request Callback.`
@@ -177,11 +178,13 @@ export function Hero({ onContactClick, location }: HeroProps) {
         </div>
 
         {/* Urgency Strip */}
-        <div className="mt-8 bg-accent-500 text-white px-6 py-4 rounded-lg text-center">
-          <p className="text-sm sm:text-base">
-            {urgencyText}
-          </p>
-        </div>
+        {!location?.richContent && (
+          <div className="mt-8 bg-accent-500 text-white px-6 py-4 rounded-lg text-center">
+            <p className="text-sm sm:text-base">
+              {urgencyText}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

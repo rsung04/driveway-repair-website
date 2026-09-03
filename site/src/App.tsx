@@ -40,11 +40,11 @@ function LandingPage({ location }: LandingPageProps) {
   };
 
   const seoTitle = location
-    ? `Emergency Driveway Repair - ${location.name} & Surrounds | 24/7 Rapid Response`
+    ? location.metaTitle ?? `Emergency Driveway Repair - ${location.name} & Surrounds | 24/7 Rapid Response`
     : "Emergency Driveway Repair Sydney | 24/7 Rapid Response";
 
   const seoDescription = location
-    ? `Emergency driveway repair in ${location.name}, ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & surrounds. 24/7 rapid response. Call 0480 893 502 for immediate assistance.`
+    ? location.metaDescription ?? `Emergency driveway repair in ${location.name}, ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & surrounds. 24/7 rapid response. Call 0480 893 502 for immediate assistance.`
     : "Emergency driveway repair across all Sydney suburbs. 24/7 rapid response for dangerous cracks, collapses & trip hazards. Call 0480 893 502 for immediate assistance.";
 
   const canonicalUrl = location
