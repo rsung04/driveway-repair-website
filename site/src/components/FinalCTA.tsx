@@ -47,6 +47,15 @@ export function FinalCTA({ onContactClick, location }: FinalCTAProps) {
                   value: 1,
                   button_location: "final_cta"
                 });
+                (window as any).dataLayer.push({
+                  event: "generate_lead",
+                  lead_type: "call_now",
+                  method: "phone",
+                  button_location: "final_cta",
+                  page_path: window.location.pathname,
+                  value: 1,
+                  currency: "AUD"
+                });
               }
 
               // Track with Facebook Pixel

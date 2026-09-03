@@ -17,6 +17,15 @@ export function EmergencyBanner() {
         value: 1,
         button_location: "emergency_banner"
       });
+      (window as any).dataLayer.push({
+        event: "generate_lead",
+        lead_type: "call_now",
+        method: "phone",
+        button_location: "emergency_banner",
+        page_path: window.location.pathname,
+        value: 1,
+        currency: "AUD"
+      });
     }
 
     // Track with Facebook Pixel
