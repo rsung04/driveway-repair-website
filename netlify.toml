@@ -1,13 +1,19 @@
 [build]
   base = "site"
   command = "npm run build"
-  publish = "build"
+  publish = "dist"
 
 [functions]
   directory = "site/netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/twilio-voice"
+  to = "/.netlify/functions/twilio-voice"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
