@@ -46,6 +46,9 @@ export function HowItWorks({ onContactClick, location }: HowItWorksProps) {
           <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
             How Our Emergency Driveway Repair Works
           </h2>
+          <p className="text-lg text-surface-700 max-w-3xl mx-auto">
+            If you want the hazard handled without guessing the bill: call or request a callback, we assess the slab on site, we stabilise it, then you get a written quote for the lasting repair.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

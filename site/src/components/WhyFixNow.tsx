@@ -23,6 +23,9 @@ export function WhyFixNow() {
           <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
             Leave It, or Fix It Now?
           </h2>
+          <p className="text-lg text-surface-700 max-w-3xl mx-auto">
+            Leave the lip and someone can catch a foot or a bumper before the next school run, while the crack keeps spreading toward a full replace. Fix it now and the drive is usable the same day — kids, cars, deliveries — with a written quote instead of a surprise invoice.
+          </p>
         </div>
 
         {/* Comparison Table */}

@@ -18,7 +18,8 @@ export function ContactForm({ location }: ContactFormProps) {
     name: "",
     suburb: "",
     phone: "",
-    issue: ""
+    issue: "",
+    urgency: ""
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,7 +37,8 @@ export function ContactForm({ location }: ContactFormProps) {
         name: formData.name,
         suburb: formData.suburb,
         phone: formData.phone,
-        issue: formData.issue
+        issue: formData.issue,
+        urgency: formData.urgency
       }).toString();
 
       const response = await fetch("/", {
@@ -50,6 +52,18 @@ export function ContactForm({ location }: ContactFormProps) {
         throw new Error(`Form submission failed with status ${response.status}`);
       }
 
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: "generate_lead",
+          lead_type: "request_callback",
+          method: "form",
+          button_location: "contact_form",
+          page_path: window.location.pathname,
+          value: 1,
+          currency: "AUD"
+        });
+      }
+
       toast.success("Request received! We'll contact you within 30 minutes.", {
         description: "Check your phone for our call."
       });
@@ -58,7 +72,8 @@ export function ContactForm({ location }: ContactFormProps) {
         name: "",
         suburb: "",
         phone: "",
-        issue: ""
+        issue: "",
+        urgency: ""
       });
     } catch (error) {
       console.error("Netlify form submission error:", error);
@@ -80,10 +95,13 @@ export function ContactForm({ location }: ContactFormProps) {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
-            Request a Fast Quote
+            Request Callback
           </h2>
           <p className="text-lg text-surface-700">
-            Can't call right now? Fill out this form and we'll get back to you <span className="font-bold text-accent-600 bg-accent-50 px-1 rounded">within 30 minutes</span>.
+            Send the suburb and what’s wrong (crack, sink, collapse, trip lip). We call back with a make-safe plan and an upfront quote — no work until you agree.
+          </p>
+          <p className="text-base text-surface-700 mt-3">
+            Pick which you need so we call back with the right slot, not a generic callback.
           </p>
         </div>
 
@@ -131,6 +149,34 @@ export function ContactForm({ location }: ContactFormProps) {
                 placeholder="0400 000 000"
               />
             </div>
+
+            <fieldset className="space-y-3">
+              <legend className="text-sm font-medium leading-none">What do you need? *</legend>
+              <label className="flex items-start gap-3 text-surface-900">
+                <input
+                  type="radio"
+                  name="urgency"
+                  value="emergency"
+                  required
+                  checked={formData.urgency === "emergency"}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                />
+                <span>Emergency make-safe today (trip hazard / collapse / can’t use the drive)</span>
+              </label>
+              <label className="flex items-start gap-3 text-surface-900">
+                <input
+                  type="radio"
+                  name="urgency"
+                  value="scheduled"
+                  required
+                  checked={formData.urgency === "scheduled"}
+                  onChange={handleInputChange}
+                  className="mt-1"
+                />
+                <span>Scheduled quote (not urgent — plan a lasting repair)</span>
+              </label>
+            </fieldset>
 
             <div className="space-y-2">
               <Label htmlFor="issue">Brief Issue Description</Label>

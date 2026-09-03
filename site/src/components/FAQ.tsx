@@ -19,6 +19,18 @@ export function FAQ({ location }: FAQProps) {
 
   const faqs = [
     {
+      question: "Who is this for — and who is it not for?",
+      answer: "For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0432 149 176 or Request Callback.",
+    },
+    {
+      question: "What’s the catch on same-day?",
+      answer: "Same-day means we attend before 5:00 pm the day you call, or the emergency call-out fee is waived. You still get the on-site assessment and the written plan. We do not publish the fee in dollars on this page. No work starts until you agree.",
+    },
+    {
+      question: "Why not just get the cheapest cash pour?",
+      answer: "A cheap pour that skips a failed base usually comes back as the same trip lip. We make the drive safe first and give a written quote before work — that is the difference, not a lower day-rate.",
+    },
+    {
       question: "How fast can you get here?",
       answer: `Most emergency call-outs in ${areaName} are attended the same day, often within a few hours, depending on demand.`,
     },

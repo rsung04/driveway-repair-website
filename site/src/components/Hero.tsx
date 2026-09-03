@@ -9,16 +9,46 @@ interface HeroProps {
 
 export function Hero({ onContactClick, location }: HeroProps) {
   const headline = location
-    ? `Emergency Driveway Repair – 24/7 Rapid Response in ${location.name} & Surrounds`
-    : "Emergency Driveway Repair – 24/7 Rapid Response Across Sydney";
+    ? `Emergency driveway repair for cracked, sunken, or collapsed drives in ${location.name}`
+    : "Emergency driveway repair for cracked, sunken, or collapsed drives in Sydney";
 
   const subtext = location
-    ? `Serving ${formatSuburbList(location.suburbs)} – We're on-site fast.`
-    : "Serving all Sydney metropolitan areas – from the Eastern Suburbs to the Hills, North Shore to the South West. We're on-site fast.";
+    ? `If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day in ${location.name}, then quote the lasting repair before work starts. Serving ${formatSuburbList(location.keySuburbs)}. Call 0432 149 176 or Request Callback.`
+    : "If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day, then quote the lasting repair before work starts. You want the driveway safe before school pickup — not a lecture about concrete. Serving Greater Sydney. Call 0432 149 176 or Request Callback.";
 
   const urgencyText = location
     ? `Priority emergency bookings available today in ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & ${location.keySuburbs[2]} – limited slots.`
     : "Priority emergency bookings available today across Sydney – limited slots.";
+
+  const handlePhoneClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag_report_conversion) {
+      (window as any).gtag_report_conversion();
+    }
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: "phone_click",
+        event_category: "engagement",
+        event_label: "hero_phone",
+        value: 1,
+        button_location: "hero"
+      });
+      (window as any).dataLayer.push({
+        event: "generate_lead",
+        lead_type: "call_now",
+        method: "phone",
+        button_location: "hero",
+        page_path: window.location.pathname,
+        value: 1,
+        currency: "AUD"
+      });
+    }
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Contact", {
+        content_name: "Phone Click - Hero",
+        button_location: "hero"
+      });
+    }
+  };
 
   return (
     <section className="bg-gradient-to-br from-primary-50 via-white to-primary-100 py-12 px-4 sm:py-16 md:py-20">
@@ -101,10 +131,11 @@ export function Hero({ onContactClick, location }: HeroProps) {
                 size="lg"
                 className="w-full sm:w-auto bg-accent-500 hover:bg-accent-600 text-white"
                 asChild
+                onClick={handlePhoneClick}
               >
                 <a href="tel:0432149176">
                   <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
-                  Call Now for Emergency Repair
+                  Call Now 0432 149 176
                 </a>
               </Button>
 
@@ -113,7 +144,7 @@ export function Hero({ onContactClick, location }: HeroProps) {
                   onClick={onContactClick}
                   className="text-primary-600 hover:text-primary-700 underline inline-flex items-center gap-2"
                 >
-                  Or request a fast quote
+                  Request Callback
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>

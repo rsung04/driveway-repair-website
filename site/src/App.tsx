@@ -41,7 +41,7 @@ function LandingPage({ location }: LandingPageProps) {
 
   const seoTitle = location
     ? `Emergency Driveway Repair - ${location.name} & Surrounds | 24/7 Rapid Response`
-    : "Emergency Driveway Repair Sydney | 24/7 Rapid Response Across All Suburbs";
+    : "Emergency Driveway Repair Sydney | 24/7 Rapid Response";
 
   const seoDescription = location
     ? `Emergency driveway repair in ${location.name}, ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & surrounds. 24/7 rapid response. Call 0432 149 176 for immediate assistance.`

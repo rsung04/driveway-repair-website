@@ -52,8 +52,9 @@ export function ThankYou({ conversionType }: ThankYouProps) {
       });
     }
 
-    // Track conversion with Google Analytics 4 via dataLayer
-    if (typeof window !== "undefined" && (window as any).dataLayer) {
+    // Form generate_lead fires on successful POST (lead_type: request_callback).
+    // Do not push generate_lead again here or GTM counts two form leads.
+    if (conversionType !== "form" && typeof window !== "undefined" && (window as any).dataLayer) {
       (window as any).dataLayer.push({
         event: "generate_lead",
         event_category: "engagement",
