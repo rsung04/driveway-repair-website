@@ -67,7 +67,7 @@ export function FinalCTA({ onContactClick, location }: FinalCTAProps) {
               }
             }}
           >
-            <a href="tel:0432149176">
+            <a href="tel:0480893502">
               <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
               Call Now for Emergency Repair
             </a>

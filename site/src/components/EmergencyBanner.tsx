@@ -53,9 +53,9 @@ export function EmergencyBanner() {
           asChild
           onClick={handlePhoneClick}
         >
-          <a href="tel:0432149176">
+          <a href="tel:0480893502">
             <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
-            Call 0432 149 176
+            Call 0480 893 502
           </a>
         </Button>
       </div>

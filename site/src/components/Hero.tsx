@@ -13,8 +13,8 @@ export function Hero({ onContactClick, location }: HeroProps) {
     : "Emergency driveway repair for cracked, sunken, or collapsed drives in Sydney";
 
   const subtext = location
-    ? `If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day in ${location.name}, then quote the lasting repair before work starts. Serving ${formatSuburbList(location.keySuburbs)}. Call 0432 149 176 or Request Callback.`
-    : "If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day, then quote the lasting repair before work starts. You want the driveway safe before school pickup — not a lecture about concrete. Serving Greater Sydney. Call 0432 149 176 or Request Callback.";
+    ? `If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day in ${location.name}, then quote the lasting repair before work starts. Serving ${formatSuburbList(location.keySuburbs)}. Call 0480 893 502 or Request Callback.`
+    : "If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day, then quote the lasting repair before work starts. You want the driveway safe before school pickup — not a lecture about concrete. Serving Greater Sydney. Call 0480 893 502 or Request Callback.";
 
   const urgencyText = location
     ? `Priority emergency bookings available today in ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & ${location.keySuburbs[2]} – limited slots.`
@@ -133,9 +133,9 @@ export function Hero({ onContactClick, location }: HeroProps) {
                 asChild
                 onClick={handlePhoneClick}
               >
-                <a href="tel:0432149176">
+                <a href="tel:0480893502">
                   <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
-                  Call Now 0432 149 176
+                  Call Now 0480 893 502
                 </a>
               </Button>
 

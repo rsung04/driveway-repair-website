@@ -173,9 +173,9 @@ export function ThankYou({ conversionType }: ThankYouProps) {
               asChild
               className="bg-accent-500 hover:bg-accent-600 text-white w-full"
             >
-              <a href="tel:0432149176">
+              <a href="tel:0480893502">
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now: 0432 149 176
+                Call Now: 0480 893 502
               </a>
             </Button>
           </div>

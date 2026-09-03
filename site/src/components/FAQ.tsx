@@ -20,7 +20,7 @@ export function FAQ({ location }: FAQProps) {
   const faqs = [
     {
       question: "Who is this for — and who is it not for?",
-      answer: "For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0432 149 176 or Request Callback.",
+      answer: "For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0480 893 502 or Request Callback.",
     },
     {
       question: "What’s the catch on same-day?",

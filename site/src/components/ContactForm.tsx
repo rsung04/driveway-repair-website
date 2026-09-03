@@ -77,7 +77,7 @@ export function ContactForm({ location }: ContactFormProps) {
       });
     } catch (error) {
       console.error("Netlify form submission error:", error);
-      toast.error("Something went wrong. Please call us directly at 0432 149 176.");
+      toast.error("Something went wrong. Please call us directly at 0480 893 502.");
     } finally {
       setIsSubmitting(false);
     }

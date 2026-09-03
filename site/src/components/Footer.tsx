@@ -98,8 +98,8 @@ export function Footer({ location }: FooterProps) {
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <Phone className="w-5 h-5 text-primary-300 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
-                  <a href="tel:0432149176" className="text-surface-300 hover:text-primary-300 transition-colors">
-                    0432 149 176
+                  <a href="tel:0480893502" className="text-surface-300 hover:text-primary-300 transition-colors">
+                    0480 893 502
                   </a>
                   <p className="text-xs text-surface-400">24/7 Emergency</p>
                 </div>
