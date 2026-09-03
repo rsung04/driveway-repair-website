@@ -21,6 +21,13 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
 
+# Twilio voice webhook (must be before SPA catch-all)
+[[redirects]]
+  from = "/api/twilio-voice"
+  to = "/.netlify/functions/twilio-voice"
+  status = 200
+  force = true
+
 # Serve SEO files directly (must be before catch-all)
 [[redirects]]
   from = "/robots.txt"
