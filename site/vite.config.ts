@@ -8,12 +8,48 @@
 
   const siteUrl = 'https://sydneydrivewayrepair.com';
   const rootMarker = '<div id="root"></div>';
+  const homeFaqs = [
+    {
+      question: 'Who is this for — and who is it not for?',
+      answer: 'For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0480 893 502 or Request Callback.',
+    },
+    {
+      question: "What's the catch on same-day?",
+      answer: 'Same-day means we attend before 5:00 pm the day you call, or the emergency call-out fee is waived. You still get the on-site assessment and the written plan. We do not publish the fee in dollars on this page. No work starts until you agree.',
+    },
+    {
+      question: 'Why not just get the cheapest cash pour?',
+      answer: 'A cheap pour that skips a failed base usually comes back as the same trip lip. We make the drive safe first and give a written quote before work — that is the difference, not a lower day-rate.',
+    },
+    {
+      question: 'How fast can you get here?',
+      answer: 'Most emergency call-outs in the Sydney metropolitan area are attended the same day, often within a few hours, depending on demand.',
+    },
+    {
+      question: 'Do you work after hours or weekends?',
+      answer: "Yes – that's when a lot of driveway failures happen. We prioritise active safety risks.",
+    },
+    {
+      question: 'Can you just make it safe for now?',
+      answer: 'Yes. We can stabilise the area and give you options for full repair when it suits your schedule and budget.',
+    },
+    {
+      question: 'Is this covered by insurance?',
+      answer: 'Every policy is different. We can provide photos and documentation to support your claim if needed.',
+    },
+    {
+      question: 'What areas do you service?',
+      answer: 'Yes. We service all Sydney metropolitan local government areas, from the Eastern Suburbs and Inner West to the North Shore, Northern Beaches, Western Sydney, and the Sutherland Shire.',
+    },
+  ];
+
   const homeRoute = {
     slug: '',
     title: 'Emergency Driveway Repair Sydney | 24/7 Rapid Response',
     description: 'Emergency driveway repair across all Sydney suburbs. 24/7 rapid response for dangerous cracks, collapses & trip hazards. Call 0480 893 502 for immediate assistance.',
     h1: 'Emergency driveway repair for cracked, sunken, or collapsed drives in Sydney',
     intro: 'If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day, then quote the lasting repair before work starts. You want the driveway safe before school pickup — not a lecture about concrete. Serving Greater Sydney. Call 0480 893 502 or Request Callback.',
+    faqs: homeFaqs,
   };
 
   const moneyRoutes = [
@@ -26,13 +62,32 @@
         description: location.metaDescription ?? `Emergency driveway repair in ${location.name}, ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & surrounds. 24/7 rapid response. Call 0480 893 502 for immediate assistance.`,
         h1: location.h1 ?? `Emergency driveway repair for cracked, sunken, or collapsed drives in ${location.name}`,
         intro: location.richContent?.intro ?? location.metaDescription ?? `Emergency driveway repair in ${location.name}. Call 0480 893 502 or Request Callback.`,
+        faqs: [
+          ...homeFaqs.map((faq) => {
+            if (faq.question === 'How fast can you get here?') {
+              return {
+                ...faq,
+                answer: `Most emergency call-outs in the ${location.name} area are attended the same day, often within a few hours, depending on demand.`,
+              };
+            }
+            if (faq.question === 'What areas do you service?') {
+              return {
+                question: 'Do you service all of these suburbs?',
+                answer: `Yes. We regularly attend call-outs in ${location.keySuburbs.join(', ')}.`,
+              };
+            }
+            return faq;
+          }),
+          ...(location.richContent?.localFaqs ?? []),
+        ],
       })),
-    ...problemPages.map(({ slug, h1, metaTitle, description }) => ({
+    ...problemPages.map(({ slug, h1, metaTitle, description, faqs }) => ({
       slug,
       title: metaTitle,
       description,
       h1,
       intro: description,
+      faqs,
     })),
   ];
 
@@ -49,6 +104,22 @@
       "'": '&#39;',
     })[character]);
   }
+
+  function faqJsonLd(faqs: { question: string; answer: string }[]) {
+    return JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
 
   const moneyNav = [
     { href: '/', label: 'Sydney emergency repair' },
@@ -104,10 +175,12 @@
 
     for (const route of moneyRoutes) {
       const routePath = route.slug ? `/${route.slug}` : '/';
+      const faqScript = `\n  <script type="application/ld+json">${faqJsonLd(route.faqs)}</script>`;
       const html = template
         .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
         .replace(/<meta name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(route.description)}" />`)
         .replace(/<link rel="canonical"[\s\S]*?\/>/, `<link rel="canonical" href="${siteUrl}${routePath}" />`)
+        .replace('</head>', `${faqScript}\n</head>`)
         .replace(rootMarker, renderFirstByteContent(route));
       const outputDir = route.slug ? path.join(distPath, route.slug) : distPath;
 
