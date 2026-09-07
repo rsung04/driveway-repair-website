@@ -686,6 +686,10 @@ export const locations: LocationData[] = [
           question: "Avalon / Newport steep entry is slippery when wet — urgent?",
           answer: "Yes if feet or cars cannot use the slope safely. High-grip / panel repair on a failed steep run is safety work — not a decorative stencil. Call Now 0480 893 502 or Request Callback.",
         },
+        {
+          question: "Do you excavate driveways on the Northern Beaches?",
+          answer: "When a washed-out edge or collapsed strip needs full-depth repair, we dig out the failed section, compact the base, and rebuild that strip — then quote the lasting fix. We are not a bulk excavation or new-build earthworks crew. Call 0480 893 502.",
+        },
       ],
       councilInfo: "Northern Beaches Council requirements can apply to new or modified vehicle crossings and to works affected by local flood or bushfire planning constraints.",
       suburbHighlights: [
@@ -750,7 +754,7 @@ export const locations: LocationData[] = [
       },
     ],
     richContent: {
-      intro: "Driveway repair in Parramatta is make-safe when Wianamatta clay heaves the slab, summer heat opens the same crack, or rebuild traffic crushes the crossover in Epping or Carlingford — not a coloured-concrete cost guide. We rebuild the failed section, then quote the lasting repair. Call 0480 893 502 or Request Callback.",
+      intro: "Driveway repair in Parramatta is make-safe when Wianamatta clay heaves the slab, summer heat opens the same crack, or rebuild traffic crushes the crossover in Epping, Carlingford or North Rocks — not a coloured-concrete cost guide. We rebuild the failed section, then quote the lasting repair. Call 0480 893 502 or Request Callback.",
       localChallenges: [
         {
           title: "Reactive clay shrink-swell movement across the LGA",
@@ -806,6 +810,10 @@ export const locations: LocationData[] = [
         {
           question: "Should I get a coloured concrete cost guide instead?",
           answer: "If you want a new decorative pour, that is a different contractor category. If the slab heaved, the lip catches the bumper, or the garage takes water, you need repair / make-safe — that is this page. Call Now 0480 893 502 or Request Callback.",
+        },
+        {
+          question: "Looking for driveway resurfacing in Parramatta?",
+          answer: "Most resurfacing searches mean a thin overlay or spray coat. If Wianamatta clay heaved the slab, a lip catches the bumper, or water is entering the garage, a coating on a moving base fails again. We make it safe the same day, then quote a structural rebuild of the failed panels — not a spray makeover. Call 0480 893 502 or Request Callback.",
         },
       ],
       councilInfo: "City of Parramatta governs vehicle crossing and road reserve interface works, so driveway scopes that alter crossovers should be checked for council approval requirements before construction.",

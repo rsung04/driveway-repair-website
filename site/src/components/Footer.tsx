@@ -84,7 +84,7 @@ export function Footer({ location }: FooterProps) {
             <ul className="space-y-2 text-sm text-surface-300">
               <li>Crack Repair</li>
               <li>Pothole Repair</li>
-              <li>Driveway Resurfacing</li>
+              <li>Structural Panel Rebuild</li>
               <li>Preventive Maintenance</li>
               <li>Emergency Repairs</li>
               <li>Sealcoating</li>
