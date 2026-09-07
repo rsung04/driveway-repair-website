@@ -50,12 +50,45 @@
     })[character]);
   }
 
+  const moneyNav = [
+    { href: '/', label: 'Sydney emergency repair' },
+    { href: '/driveway-repair-woollahra', label: 'Woollahra' },
+    { href: '/driveway-repair-sydney-city', label: 'City of Sydney' },
+    { href: '/driveway-repair-north-sydney', label: 'North Sydney' },
+    { href: '/driveway-repair-northern-beaches', label: 'Northern Beaches' },
+    { href: '/driveway-repair-parramatta', label: 'Parramatta' },
+    { href: '/trip-hazard-driveway-repair', label: 'Trip hazard' },
+    { href: '/storm-driveway-repair-sydney', label: 'Storm damage' },
+    { href: '/collapsed-driveway-sydney', label: 'Collapsed driveway' },
+  ];
+
   function renderFirstByteContent(route: (typeof moneyRoutes)[number]) {
+    const nav = moneyNav
+      .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
+      .join(' · ');
     return `<div id="root">
     <main>
       <h1>${escapeHtml(route.h1)}</h1>
       <p>${escapeHtml(route.intro)}</p>
       <p><a href="tel:0480893502">Call Now 0480 893 502</a></p>
+      <p><a href="#contact">Request Callback</a></p>
+      <form id="contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none"><label>Do not fill this out: <input name="bot-field" /></label></p>
+        <p><label>Name <input type="text" name="name" required /></label></p>
+        <p><label>Suburb <input type="text" name="suburb" required /></label></p>
+        <p><label>Phone <input type="tel" name="phone" required /></label></p>
+        <p><label>Urgency
+          <select name="urgency">
+            <option value="today">Today / emergency</option>
+            <option value="this-week">This week</option>
+            <option value="planning">Planning ahead</option>
+          </select>
+        </label></p>
+        <p><label>Issue <textarea name="issue" rows="3" required></textarea></label></p>
+        <p><button type="submit">Request Callback</button></p>
+      </form>
+      <nav aria-label="Service areas">${nav}</nav>
     </main>
   </div>`;
   }
