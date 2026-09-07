@@ -528,6 +528,120 @@ export const problemPages: ProblemPageData[] = [
       { label: "Asphalt / bitumen crews", reason: "We repair concrete driveways. Asphalt is out of scope on this site." },
     ],
   },
+  {
+    slug: "driveway-pothole-crack-repair",
+    h1: "Driveway Pothole and Crack Repair Sydney",
+    metaTitle: "Driveway Pothole and Crack Repair Sydney | Sydney Driveway Repair",
+    description: "Concrete driveway pothole and crack repair in Sydney — diagnose hairline vs structural cracks and surface holes vs undermined base, make-safe if needed, then proper crack repair or cut-out and rebuild of the failed section. Not an asphalt pothole specialist. Call 0480 893 502 or Request Callback.",
+    helper: "Send suburb + what’s wrong (hairline crack, through-crack, hole at a joint, undermined edge, car scrapes). No work until you agree.",
+    sections: [
+      {
+        heading: "What pothole and crack repair means here",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Driveway pothole and crack repair on this page means concrete: diagnose first, make the drive safe if needed, then proper crack repair or cut-out and rebuild of the failed section. A hairline surface crack is not the same job as a through-crack that opens with rain, and a shallow surface hole is not the same as a pothole where the base has washed out under the slab.",
+          },
+          {
+            type: "paragraph",
+            text: "We are not Potholes Sydney and not an asphalt/bitumen patch crew. If your drive is asphalt-only, we say so and send that work away. We also do not skim spray-on or stencil resurfacing over moving cracks. For broader panel failure see Concrete Driveway Repair; for a raised lip see Trip Hazard Driveway Repair. Call 0480 893 502 or Request Callback.",
+          },
+        ],
+      },
+      {
+        heading: "Hairline vs structural; surface hole vs undermined base",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Honest diagnosis decides whether a sealed crack, a cut-out rebuild, or a different trade is the lasting path. A patch over an undermined base usually fails again.",
+          },
+          {
+            type: "table",
+            headers: ["What you see", "Honest path", "Not our offer"],
+            rows: [
+              ["Hairline surface crack, slab sound", "Monitor / seal if appropriate after assess", "Full rebuild sold as default"],
+              ["Structural / through-crack, panel moving", "Cut-out + rebuild failed section", "Spray-on coat over a moving crack"],
+              ["Surface pothole / spall on sound base", "Local repair of failed concrete", "Asphalt cold-patch as the product"],
+              ["Hole with undermined / washed-out base", "Make-safe → cut-out + re-base + pour", "Bag-mix skim that fails next wet week"],
+              ["Asphalt / bitumen pothole only", "Refer asphalt specialist", "Us pretending to be that crew"],
+              ["Whole intact slab sunken flat", "Refer resin lift / slab-jack specialist", "Us selling injection as our method"],
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "When a cheap patch has already failed twice, section rebuild is usually the honest next step — not another skim. If collapse or a trip lip is the main risk, see Collapsed Driveway Sydney or Trip Hazard Driveway Repair; for urgent make-safe see Emergency Driveway Repair.",
+          },
+        ],
+      },
+      {
+        heading: "How the repair process works",
+        blocks: [
+          {
+            type: "ordered-list",
+            items: [
+              "Call or Request Callback with suburb and what failed (photo if you can).",
+              "On-site diagnose: hairline vs structural; surface hole vs undermined base; patch vs cut-out vs send-away asphalt or resin lift.",
+              "Make-safe if the entry or walkway is unsafe to use today.",
+              "Written quote for proper crack repair or cut-out and rebuild — no work until you agree.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "We do not claim a fake under-one-hour or 24/7 SLA on this page. Same-day make-safe is available when we can attend and the drive is unsafe; the lasting repair is quoted before that work starts.",
+          },
+        ],
+      },
+    ],
+    leaveIt: "The crack keeps opening and the hole keeps growing until someone trips or the car bottoms out again.",
+    fixIt: "The failed concrete is diagnosed honestly — sealed or cut out and rebuilt with a written quote — make-safe today if the drive is unsafe.",
+    feeling: "using the drive without watching every crack and hole.",
+    serviceAreas: [
+      { label: "Driveway Repair Woollahra", href: "/driveway-repair-woollahra", note: "heritage edges, fig heave, cracked panels" },
+      { label: "Driveway Repair City of Sydney", href: "/driveway-repair-sydney-city", note: "strata aprons, shared lanes, failed sections" },
+      { label: "Driveway Repair North Sydney", href: "/driveway-repair-north-sydney", note: "steep grades, garage lips, joint failure" },
+      { label: "Driveway Repair Northern Beaches", href: "/driveway-repair-northern-beaches", note: "coastal spalling and edge cracks (repair, not resurfacing)" },
+      { label: "Driveway Repair Parramatta", href: "/driveway-repair-parramatta", note: "clay movement cracks and crushed crossovers" },
+    ],
+    relatedLinks: [
+      { label: "Concrete Driveway Repair", href: "/concrete-driveway-repair" },
+      { label: "Trip Hazard Driveway Repair", href: "/trip-hazard-driveway-repair" },
+      { label: "Collapsed Driveway Sydney", href: "/collapsed-driveway-sydney" },
+      { label: "Emergency Driveway Repair Sydney", href: "/emergency-driveway-repair" },
+    ],
+    steps: [
+      { title: "Call Us or Request a Callback", description: "Suburb + what’s wrong (crack type, hole, photo if you can)." },
+      { title: "On-site diagnose", description: "Hairline vs structural; surface vs undermined; send away asphalt-only or resin-lift-only when that is honest." },
+      { title: "Make-safe if needed", description: "Temporary make-safe when the entry or walkway is unsafe today." },
+      { title: "Clear quote for lasting repair", description: "Proper crack repair or cut-out and rebuild. Written. No work until you agree." },
+    ],
+    contactDescription: "Send the suburb and what’s wrong (hairline crack, through-crack, surface hole, undermined pothole). We call back with a diagnose-first plan and written quote — or we tell you when an asphalt crew, resurfacer, resin lift specialist, or plumber is the better trade. No work until you agree.",
+    issuePlaceholder: "e.g., Through-crack at joint, hole with hollow base, hairline crack...",
+    faqs: [
+      {
+        question: "Do you repair asphalt driveway potholes?",
+        answer: "No. This page is concrete driveway pothole and crack repair. Asphalt/bitumen potholes belong with an asphalt specialist — we say so on the call rather than sell a concrete method on the wrong surface. Call 0480 893 502 or Request Callback if you are unsure which surface you have.",
+      },
+      {
+        question: "Is a hairline crack the same as a structural crack?",
+        answer: "No. A hairline surface crack on a sound slab may only need monitoring or sealing after assessment. A through-crack where the panel has moved, the joint keeps opening, or water is washing the base usually needs cut-out and rebuild of the failed section. We diagnose on site before quoting.",
+      },
+      {
+        question: "Why did my driveway patch fail again?",
+        answer: "Most failed patches sit on an undermined base, a moving crack, or a skim over broken concrete. Lasting repair means fixing the base and rebuilding the failed section — not another bag-mix or spray coat over the same hole. If the whole intact plate has sunk flat, a resin lift specialist may fit; we do not sell that as our method.",
+      },
+      {
+        question: "Can you make a potholed or cracked driveway safe the same day?",
+        answer: "Often yes when a hole, open crack, or broken edge makes the entry unsafe. Same-day means make-safe or an assessment where we can attend; the lasting cut-out and rebuild is quoted before that work starts. We do not promise a fake under-one-hour or 24/7 SLA on this page. Request Callback with suburb and a photo.",
+      },
+    ],
+    notUs: [
+      { label: "Asphalt / bitumen pothole crews", reason: "We repair concrete. Asphalt-only potholes are sent away honestly." },
+      { label: "Spray-on / stencil resurfacers", reason: "They cover cracks; we diagnose and rebuild failed concrete." },
+      { label: "Resin injection / slab-jack specialists", reason: "We diagnose lift-vs-rebuild; we do not sell resin lift as our method." },
+      { label: "Decorative new-pour concreters", reason: "Full coloured new drives are a different product when the slab is sound." },
+      { label: "Fake 24/7 asphalt emergency patchers", reason: "This page does not claim asphalt scope or a fake under-one-hour SLA." },
+    ],
+  },
 ];
 
 export function getProblemPageBySlug(slug: string): ProblemPageData | undefined {
