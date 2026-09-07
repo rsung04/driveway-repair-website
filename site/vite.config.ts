@@ -1,10 +1,98 @@
 
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
+  import fs from 'fs/promises';
   import path from 'path';
+  import { locations } from './src/data/locations';
+  import { problemPages } from './src/data/problemPages';
+
+  const siteUrl = 'https://sydneydrivewayrepair.com';
+  const rootMarker = '<div id="root"></div>';
+  const homeRoute = {
+    slug: '',
+    title: 'Emergency Driveway Repair Sydney | 24/7 Rapid Response',
+    description: 'Emergency driveway repair across all Sydney suburbs. 24/7 rapid response for dangerous cracks, collapses & trip hazards. Call 0480 893 502 for immediate assistance.',
+    h1: 'Emergency driveway repair for cracked, sunken, or collapsed drives in Sydney',
+    intro: 'If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day, then quote the lasting repair before work starts. You want the driveway safe before school pickup — not a lecture about concrete. Serving Greater Sydney. Call 0480 893 502 or Request Callback.',
+  };
+
+  const moneyRoutes = [
+    homeRoute,
+    ...locations
+      .filter((location) => location.richContent)
+      .map((location) => ({
+        slug: location.slug,
+        title: location.metaTitle ?? `Emergency Driveway Repair - ${location.name} & Surrounds | 24/7 Rapid Response`,
+        description: location.metaDescription ?? `Emergency driveway repair in ${location.name}, ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & surrounds. 24/7 rapid response. Call 0480 893 502 for immediate assistance.`,
+        h1: location.h1 ?? `Emergency driveway repair for cracked, sunken, or collapsed drives in ${location.name}`,
+        intro: location.richContent?.intro ?? location.metaDescription ?? `Emergency driveway repair in ${location.name}. Call 0480 893 502 or Request Callback.`,
+      })),
+    ...problemPages.map(({ slug, h1, metaTitle, description }) => ({
+      slug,
+      title: metaTitle,
+      description,
+      h1,
+      intro: description,
+    })),
+  ];
+
+  if (moneyRoutes.length !== 9) {
+    throw new Error(`Expected 9 money routes, found ${moneyRoutes.length}`);
+  }
+
+  function escapeHtml(value: string) {
+    return value.replace(/[&<>"']/g, (character) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    })[character]);
+  }
+
+  function renderFirstByteContent(route: (typeof moneyRoutes)[number]) {
+    return `<div id="root">
+    <main>
+      <h1>${escapeHtml(route.h1)}</h1>
+      <p>${escapeHtml(route.intro)}</p>
+      <p><a href="tel:0480893502">Call Now 0480 893 502</a></p>
+    </main>
+  </div>`;
+  }
+
+  async function writeMoneyRoutePages() {
+    const distPath = path.resolve(__dirname, 'dist');
+    const templatePath = path.join(distPath, 'index.html');
+    const template = await fs.readFile(templatePath, 'utf8');
+
+    if (!template.includes(rootMarker)) {
+      throw new Error(`Could not find ${rootMarker} in ${templatePath}`);
+    }
+
+    for (const route of moneyRoutes) {
+      const routePath = route.slug ? `/${route.slug}` : '/';
+      const html = template
+        .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
+        .replace(/<meta name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(route.description)}" />`)
+        .replace(/<link rel="canonical"[\s\S]*?\/>/, `<link rel="canonical" href="${siteUrl}${routePath}" />`)
+        .replace(rootMarker, renderFirstByteContent(route));
+      const outputDir = route.slug ? path.join(distPath, route.slug) : distPath;
+
+      await fs.mkdir(outputDir, { recursive: true });
+      await fs.writeFile(path.join(outputDir, 'index.html'), html);
+    }
+  }
+
+  function prerenderMoneyRoutes() {
+    return {
+      name: 'prerender-money-routes',
+      apply: 'build' as const,
+      closeBundle: writeMoneyRoutePages,
+    };
+  }
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [react(), prerenderMoneyRoutes()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
