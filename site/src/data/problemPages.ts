@@ -415,6 +415,119 @@ export const problemPages: ProblemPageData[] = [
       { label: "Emergency excavation as a standalone service", reason: "We repair the driveway failure; we are not a general excavation or plumbing service." },
     ],
   },
+  {
+    slug: "concrete-driveway-repair",
+    h1: "Concrete Driveway Repair Sydney",
+    metaTitle: "Concrete Driveway Repair Sydney | Sydney Driveway Repair",
+    description: "Concrete driveway repair in Sydney when panels crack, scale, sink, or an edge fails — diagnose first, make-safe if needed, then cut-out and rebuild the failed section with a written quote. Not a resurfacing skim over a moving slab. Call 0480 893 502 or Request Callback.",
+    helper: "Send suburb + what’s wrong (cracked panel, scaled surface, sunk edge, failed joint, car scrapes). No work until you agree.",
+    sections: [
+      {
+        heading: "What concrete driveway repair means here",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Concrete driveway repair is diagnose first, make the drive safe if needed, then cut out and rebuild the failed section — not a coloured skim, spray-on coat, or stencil finish over a slab that is still moving. When a panel cracks through, scales, sinks, or an edge fails, lasting work means removing the failed concrete, fixing the base where it has washed out or compacted poorly, and pouring that section again so the entry is usable.",
+          },
+          {
+            type: "paragraph",
+            text: "Sydney Driveway Repair is a repair / make-safe crew for cracked, sunken, and failed concrete drives across Greater Sydney. We are not a decorative new-pour showroom and not a resin injection specialist. Call 0480 893 502 or Request Callback.",
+          },
+        ],
+      },
+      {
+        heading: "When a patch or skim fails",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "A thin overlay, bag-mix patch, or spray resurfacing over a moving or hollow panel usually opens again. The crack follows the same line; the edge keeps dropping; the car still scrapes. That is why this page separates repair from resurfacing.",
+          },
+          {
+            type: "table",
+            headers: ["What you see", "Honest path", "Not our offer"],
+            rows: [
+              ["Cracked / broken panel", "Cut-out + rebuild failed section", "Spray-on coat over the crack"],
+              ["Sunk edge or dropped apron", "Make-safe → cut-out + re-base + pour", "Stencil colour over a hollow"],
+              ["Scaled / spalled surface on a sound slab", "Assess depth; repair section if structural", "Full decorative makeover as the product"],
+              ["Whole intact slab sunken flat", "Refer lift / slab-jack specialist", "Us pretending to inject resin"],
+              ["Blocked drain under the drive", "Plumber for the pipe", "Us clearing stormwater"],
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "If a decorative resurfacer or a full new driveway pour is clearly the better product, we say so on the call rather than skim a failed base.",
+          },
+        ],
+      },
+      {
+        heading: "How the repair process works",
+        blocks: [
+          {
+            type: "ordered-list",
+            items: [
+              "Call or Request Callback with suburb and what failed (photo if you can).",
+              "On-site diagnose: patch vs cut-out vs full replace of the failed run; lift-vs-rebuild if the whole plate has sunk.",
+              "Make-safe if the entry or walkway is unsafe to use today.",
+              "Written quote for cut-out and rebuild of the failed section — no work until you agree.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Coastal salt and age can scale or spall the top of concrete near the beaches and harbour edges. We assess whether the damage is surface-only or the panel / edge has failed structurally — without inventing a job list. If salt has only worn the finish on a sound slab, that may be a different trade; if the edge or panel has failed, we quote rebuild.",
+          },
+        ],
+      },
+    ],
+    leaveIt: "The cracked panel or dropped edge keeps spreading, and another skim peels off before the next wet week.",
+    fixIt: "The failed section is cut out and rebuilt with a written quote first — make-safe today if the drive is unsafe — not a decorative cover-up.",
+    feeling: "using the drive without watching for the next crack or scrape.",
+    serviceAreas: [
+      { label: "Driveway Repair Woollahra", href: "/driveway-repair-woollahra", note: "heritage edges, fig heave, cracked panels" },
+      { label: "Driveway Repair City of Sydney", href: "/driveway-repair-sydney-city", note: "strata aprons, shared lanes, failed sections" },
+      { label: "Driveway Repair North Sydney", href: "/driveway-repair-north-sydney", note: "steep grades, garage lips, joint failure" },
+      { label: "Driveway Repair Northern Beaches", href: "/driveway-repair-northern-beaches", note: "coastal salt / spalling and edge repair (repair, not resurfacing)" },
+      { label: "Driveway Repair Parramatta", href: "/driveway-repair-parramatta", note: "clay movement cracks and crushed crossovers" },
+    ],
+    relatedLinks: [
+      { label: "Trip Hazard Driveway Repair", href: "/trip-hazard-driveway-repair" },
+      { label: "Collapsed Driveway Sydney", href: "/collapsed-driveway-sydney" },
+      { label: "Storm Driveway Repair Sydney", href: "/storm-driveway-repair-sydney" },
+      { label: "Emergency Driveway Repair Sydney", href: "/emergency-driveway-repair" },
+    ],
+    steps: [
+      { title: "Call Us or Request a Callback", description: "Suburb + what’s wrong with the concrete (photo if you can)." },
+      { title: "On-site diagnose", description: "Patch vs cut-out vs full replace of the failed run; send away resurfacing or resin lift when that is honest." },
+      { title: "Make-safe if needed", description: "Temporary make-safe when the entry or walkway is unsafe today." },
+      { title: "Clear quote for lasting repair", description: "Cut-out and rebuild of the failed section. Written. No work until you agree." },
+    ],
+    contactDescription: "Send the suburb and what’s wrong (cracked panel, scaled surface, sunk edge, failed joint). We call back with a diagnose-first plan and written quote — or we tell you when a resurfacer, new-pour crew, resin lift specialist, or plumber is the better trade. No work until you agree.",
+    issuePlaceholder: "e.g., Cracked panel, sunk edge, scaled concrete...",
+    faqs: [
+      {
+        question: "Is concrete driveway repair the same as resurfacing?",
+        answer: "No. Resurfacing or spray-on / stencil coats cover the top of the slab. Repair here means diagnose first, then cut out and rebuild the failed section when panels crack, sink, or an edge fails. A skim over a moving slab usually fails again. If you only want a decorative finish on a sound drive, that is a different trade — we say so on the call.",
+      },
+      {
+        question: "Do I need a full new driveway or can you repair a section?",
+        answer: "Often a failed panel, apron, or edge can be cut out and rebuilt without replacing the whole drive. If the base has failed across most of the run, a larger replace may be honest. We quote the failed section in writing after assessing on site — not a default full new pour. Call 0480 893 502 or Request Callback.",
+      },
+      {
+        question: "Can you make a failed concrete driveway safe the same day?",
+        answer: "Often yes when a crack, dropped edge, or broken panel makes the entry unsafe. Same-day means make-safe or an assessment where we can attend; the lasting cut-out and rebuild is quoted before that work starts. We do not promise a fake under-one-hour SLA. Request Callback with suburb and a photo.",
+      },
+      {
+        question: "Does coastal salt damage need concrete driveway repair?",
+        answer: "Salt air and age can scale or spall the surface near coastal and harbour suburbs. If only the finish is worn on a sound slab, a different trade may fit. If panels crack, edges fail, or the base has washed out, we quote cut-out and rebuild of the failed section. We assess on site without inventing a job history. Call 0480 893 502.",
+      },
+    ],
+    notUs: [
+      { label: "Decorative resurfacers / spray-on / stencil crews", reason: "They sell a new finish. This page is repair of failed concrete, not a coloured skim." },
+      { label: "New-pour decorative concreters", reason: "Full coloured or stamped new drives are a different product when the existing slab is sound." },
+      { label: "Resin injection / slab-jack specialists", reason: "We diagnose lift-vs-rebuild; we do not sell resin lift as our method." },
+      { label: "Stormwater plumbers", reason: "Blocked drains, pits, and pipes belong with a plumber — see storm driveway repair for the split." },
+      { label: "Asphalt / bitumen crews", reason: "We repair concrete driveways. Asphalt is out of scope on this site." },
+    ],
+  },
 ];
 
 export function getProblemPageBySlug(slug: string): ProblemPageData | undefined {

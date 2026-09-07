@@ -91,8 +91,8 @@
     })),
   ];
 
-  if (moneyRoutes.length !== 10) {
-    throw new Error(`Expected 10 money routes, found ${moneyRoutes.length}`);
+  if (moneyRoutes.length !== 11) {
+    throw new Error(`Expected 11 money routes, found ${moneyRoutes.length}`);
   }
 
   function escapeHtml(value: string) {
@@ -132,6 +132,7 @@
     { href: '/storm-driveway-repair-sydney', label: 'Storm damage' },
     { href: '/collapsed-driveway-sydney', label: 'Collapsed driveway' },
     { href: '/emergency-driveway-repair', label: 'Emergency' },
+    { href: '/concrete-driveway-repair', label: 'Concrete' },
   ];
 
   function renderFirstByteContent(route: (typeof moneyRoutes)[number]) {
@@ -181,6 +182,11 @@
         .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
         .replace(/<meta name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(route.description)}" />`)
         .replace(/<link rel="canonical"[\s\S]*?\/>/, `<link rel="canonical" href="${siteUrl}${routePath}" />`)
+        .replace(/<meta property="og:url"[\s\S]*?\/>/, `<meta property="og:url" content="${siteUrl}${routePath}" />`)
+        .replace(/<meta property="og:title"[\s\S]*?\/>/, `<meta property="og:title" content="${escapeHtml(route.title)}" />`)
+        .replace(/<meta property="og:description"[\s\S]*?\/>/, `<meta property="og:description" content="${escapeHtml(route.description)}" />`)
+        .replace(/<meta name="twitter:title"[\s\S]*?\/>/, `<meta name="twitter:title" content="${escapeHtml(route.title)}" />`)
+        .replace(/<meta name="twitter:description"[\s\S]*?\/>/, `<meta name="twitter:description" content="${escapeHtml(route.description)}" />`)
         .replace('</head>', `${faqScript}\n</head>`)
         .replace(rootMarker, renderFirstByteContent(route));
       const outputDir = route.slug ? path.join(distPath, route.slug) : distPath;
