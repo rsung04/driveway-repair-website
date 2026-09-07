@@ -18,6 +18,8 @@ import { Footer } from "./components/Footer";
 import { ServiceAreas } from "./components/ServiceAreas";
 import { useRef, useEffect, lazy, Suspense } from "react";
 import { LocationData, getLocationBySlug } from "./data/locations";
+import { getProblemPageBySlug } from "./data/problemPages";
+import { ProblemPage } from "./pages/ProblemPage";
 
 const ThankYou = lazy(() => import("./pages/ThankYou").then(m => ({ default: m.ThankYou })));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy").then(m => ({ default: m.PrivacyPolicy })));
@@ -94,7 +96,12 @@ function LandingPage({ location }: LandingPageProps) {
 
 function LocationPage() {
   const { slug } = useParams<{ slug: string }>();
+  const problemPage = slug ? getProblemPageBySlug(slug) : undefined;
   const location = slug ? getLocationBySlug(slug) : undefined;
+
+  if (problemPage) {
+    return <ProblemPage page={problemPage} />;
+  }
 
   if (!location) {
     return <Suspense fallback={<div className="min-h-screen" />}><NotFound /></Suspense>;

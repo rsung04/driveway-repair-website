@@ -7,17 +7,24 @@ import {
 import { Helmet } from "react-helmet-async";
 import { LocationData, formatSuburbList } from "../data/locations";
 
-interface FAQProps {
-  location?: LocationData;
+export interface FAQItem {
+  question: string;
+  answer: string;
 }
 
-export function FAQ({ location }: FAQProps) {
+interface FAQProps {
+  location?: LocationData;
+  items?: FAQItem[];
+  title?: string;
+}
+
+export function FAQ({ location, items, title }: FAQProps) {
   const areaName = location ? `the ${location.name} area` : "the Sydney metropolitan area";
   const suburbAnswer = location
     ? `Yes. We regularly attend call-outs in ${formatSuburbList(location.suburbs)}.`
     : "Yes. We service all Sydney metropolitan local government areas, from the Eastern Suburbs and Inner West to the North Shore, Northern Beaches, Western Sydney, and the Sutherland Shire.";
 
-  const faqs = [
+  const faqs: FAQItem[] = [
     {
       question: "Who is this for — and who is it not for?",
       answer: "For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0480 893 502 or Request Callback.",
@@ -52,7 +59,7 @@ export function FAQ({ location }: FAQProps) {
     },
   ];
   const localFaqs = location?.richContent?.localFaqs ?? [];
-  const allFaqs = [...faqs, ...localFaqs];
+  const allFaqs = items ?? [...faqs, ...localFaqs];
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -76,7 +83,7 @@ export function FAQ({ location }: FAQProps) {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl text-surface-900 mb-4">
-              Emergency Driveway Repair – FAQs
+              {title ?? "Emergency Driveway Repair – FAQs"}
             </h2>
           </div>
 

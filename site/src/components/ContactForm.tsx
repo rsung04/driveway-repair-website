@@ -10,9 +10,12 @@ import { useNavigate } from "react-router-dom";
 
 interface ContactFormProps {
   location?: LocationData;
+  intro?: string;
+  secondaryIntro?: string;
+  issuePlaceholder?: string;
 }
 
-export function ContactForm({ location }: ContactFormProps) {
+export function ContactForm({ location, intro, secondaryIntro, issuePlaceholder }: ContactFormProps) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -27,6 +30,8 @@ export function ContactForm({ location }: ContactFormProps) {
   const suburbPlaceholder = location
     ? `e.g., ${location.keySuburbs[0]}, ${location.keySuburbs[1]}`
     : "e.g., Bondi, Parramatta, Cronulla";
+  const formIntro = intro ?? "Send the suburb and what’s wrong (crack, sink, collapse, trip lip). We call back with a make-safe plan and an upfront quote — no work until you agree.";
+  const formSecondaryIntro = secondaryIntro ?? "Pick which you need so we call back with the right slot, not a generic callback.";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,11 +103,13 @@ export function ContactForm({ location }: ContactFormProps) {
             Request Callback
           </h2>
           <p className="text-lg text-surface-700">
-            Send the suburb and what’s wrong (crack, sink, collapse, trip lip). We call back with a make-safe plan and an upfront quote — no work until you agree.
+            {formIntro}
           </p>
-          <p className="text-base text-surface-700 mt-3">
-            Pick which you need so we call back with the right slot, not a generic callback.
-          </p>
+          {formSecondaryIntro && (
+            <p className="text-base text-surface-700 mt-3">
+              {formSecondaryIntro}
+            </p>
+          )}
         </div>
 
         <div className="bg-surface-50 rounded-lg p-6 sm:p-8 shadow-lg border border-surface-200">
@@ -187,7 +194,7 @@ export function ContactForm({ location }: ContactFormProps) {
                 value={formData.issue}
                 onChange={handleInputChange}
                 className="bg-white border-surface-300 resize-none"
-                placeholder="e.g., Large crack across driveway, concrete slab has sunk..."
+                placeholder={issuePlaceholder ?? "e.g., Large crack across driveway, concrete slab has sunk..."}
               />
             </div>
 
