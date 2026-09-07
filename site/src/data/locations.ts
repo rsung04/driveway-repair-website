@@ -134,20 +134,20 @@ export const locations: LocationData[] = [
       ],
       localFaqs: [
         {
-          question: "Do I need Woollahra Council approval to repair my driveway?",
+          question: "Do I need Woollahra Council approval to repair my driveway today?",
           answer: "Like-for-like repair inside your lot is often maintenance. Work on the public road reserve — kerb, layback, verge, a wider crossover — is a vehicle crossing under section 138 of the Roads Act 1993, separate from a DA. Heritage Conservation Areas also scrutinise street-facing finishes. We flag which side of the boundary you are on before work starts.",
         },
         {
-          question: "Should I repair or replace a Woollahra driveway?",
-          answer: "A hairline on a flat, unmoving slab can be repaired. A lip from Moreton Bay fig roots, a sandstone edge that has lifted, or a steep Point Piper run sending water to the garage is usually cut-out and rebuild — not filler. We will not overlay a slab that is still moving. Call 0480 893 502 if you need that called on site.",
+          question: "The lip by the street fig keeps catching a foot — can you make it safe before school?",
+          answer: "Root pressure under the edge keeps moving the joint; filler alone fails next season. We make-safe the lip same day, then quote cut-out + compacted base + an edge that can take some ongoing movement. Request Callback with Bellevue Hill / Rose Bay + a photo.",
         },
         {
           question: "Can you work a Paddington rear lane without blocking the street for days?",
           answer: "Yes. Those lanes will not take a full-size machine. We use compact gear, stage removal, and rebuild the failed depth — not a skim that fails at the garage threshold. Neighbours still need to get cars out; that is the access plan, not a slogan. Request Callback with the suburb and a photo of the lane.",
         },
         {
-          question: "Why does the crack keep coming back next to the street fig?",
-          answer: "Root pressure and moisture under the edge keep moving the joint. Filling the crack leaves the fig doing the same work next season. Durable repair here is pressure-zone cut-out, compacted base, and an edge that can take some ongoing movement — plus a make-safe so nobody catches the lip in the meantime.",
+          question: "Repair or replace a sandstone edge in Double Bay?",
+          answer: "A hairline on a flat unmoving slab can be repaired. A fig-lifted lip, lifted sandstone, or Point Piper runoff to the garage is usually cut-out and rebuild — not filler, not overlay on a moving slab. Call Now 0480 893 502.",
         },
       ],
       councilInfo: "Woollahra Municipal Council applies strict controls in heritage areas, and changes to vehicle crossings or streetscape-visible driveway elements may require council approval before works start.",
@@ -295,7 +295,7 @@ export const locations: LocationData[] = [
       ],
       localFaqs: [
         {
-          question: "Does City of Sydney approval apply if we only repair part of a driveway?",
+          question: "Do I need City of Sydney approval for a crossover repair?",
           answer: "Like-for-like repair wholly inside the lot is usually simpler. Crossover, kerb, or footpath-interface work is typically a council process — City of Sydney publishes a permit to construct, repair or abolish a driveway, separate from a DA. We draw the boundary of the job before anyone cuts, so strata is not left with a stopped site.",
         },
         {
@@ -303,12 +303,12 @@ export const locations: LocationData[] = [
           answer: "That is the point of staging. Courier vans already broke the edge because the lane is short and busy; a multi-day closure is what residents cannot wear. We cut and rebuild in sections, night or early morning where it is needed, and reopen each piece. Request Callback with the suburb and a photo of the lane.",
         },
         {
-          question: "Repair or replace — the slab in Zetland keeps going soft after rain?",
+          question: "Why does my Zetland / Waterloo garage lip keep ponding after rain?",
           answer: "Crack-seal on Green Square ground fails because the base stays wet. If the garage lip ponds and the slab has dropped, that is base reconstruction and falls, not another tube of filler. A flat, unmoving inner-city slab can still be a panel repair. We will say which after we see the water path.",
         },
         {
-          question: "Who signs off if this is strata / common property?",
-          answer: "If the failed section is common property, the committee (or the strata manager) usually has to authorise the lasting repair. Make-safe for a trip lip should not wait on a general meeting. We can document the hazard and the quote for the records. Call 0480 893 502 if someone could fall today.",
+          question: "Courier vans keep crushing our short Redfern apron — same-day make-safe?",
+          answer: "Yes. Short inner-city crossovers take turning loads they were not built for. Make-safe the crushed edge today; written quote for the lasting apron rebuild. Call 0480 893 502.",
         },
       ],
       councilInfo: "City of Sydney has strict controls for vehicle crossovers, road reserve interfaces and heritage streetscapes, so scope definition and permit sequencing are critical before construction.",
@@ -462,20 +462,20 @@ export const locations: LocationData[] = [
       ],
       localFaqs: [
         {
-          question: "Do North Sydney heritage or crossover rules stop a repair?",
-          answer: "Like-for-like repair inside the lot is usually straightforward. Changing the street-facing material, the crossover shape, or the kerb on the public road is a different job and can need council assessment (including section 138 for works on the road reserve). We call that split before anyone cuts. We do not invent a fee.",
+          question: "My Kirribilli driveway is slippery and sending water into the garage after rain — can you make it usable today?",
+          answer: "Yes. Steep North Shore grades polish under braking and push water at the door. Same-day make-safe for feet and cars, then a written quote for regrade / panel rebuild — not a coloured ‘elevate the aesthetics’ pour. Call Now 0480 893 502.",
         },
         {
-          question: "Repair or replace — the steep drive keeps cracking after every patch?",
-          answer: "On Kirribilli / Waverton grades, a weak patch reopens because braking load and water are still on the same line. If the lip is a trip and the garage is taking water, that is rebuild of the failed run and the falls — not filler. A flat, unmoving panel can still be a repair. We say which on site.",
+          question: "Neutral Bay brick headers are loose at the basement entry — trip hazard?",
+          answer: "Loose headers and sunken wheel tracks are classic Neutral Bay / Cremorne shared-brick failures. We relay / rebuild the failed edge and make the threshold safe; we do not stencil over movement. Request Callback with suburb + photo.",
         },
         {
-          question: "Can you fix a Neutral Bay brick drive without replacing the whole thing in coloured concrete?",
-          answer: "Yes, if the failure is local: sunken wheel tracks, loose headers, a trip edge at the basement. We lift the failed brick, rebuild the base, and reset a matching bond. A full coloured replacement is a different trade and a different page — that is not this offer. Call 0480 893 502 for make-safe if it is catching feet now.",
+          question: "Military Road crossover levels feel wrong — is that a council issue?",
+          answer: "Busy-road crossover interfaces often sit partly in the public road reserve. We assess falls and damage on site and flag what needs North Sydney Council process vs private-lot repair. Do not invent a kerb cut. Call 0480 893 502.",
         },
         {
-          question: "Can residents still get in if this is a Crows Nest strata driveway?",
-          answer: "We stage sections and keep an access path where the site allows it. A collapsed edge or trip lip should be made safe first; the lasting repair can sit in a booked window so parking is not lost for a week. Request Callback with the suburb, the block, and a photo of the lip.",
+          question: "Why not just overlay the whole North Sydney drive?",
+          answer: "Overlay on a slab still moving (wet grade, brick settlement, washed base) brings the same lip back. We cut out failed sections and rebuild — repair / make-safe, not a new-pour twin of a North Shore concreter. Call Now 0480 893 502.",
         },
       ],
       councilInfo: "North Sydney Council places strong emphasis on heritage and streetscape outcomes, and driveway works involving crossovers or visible boundary changes may require formal approval pathways.",
@@ -671,20 +671,20 @@ export const locations: LocationData[] = [
       ],
       localFaqs: [
         {
-          question: "Do I need Northern Beaches Council approval for the crossover?",
-          answer: "Like-for-like repair on your private slab is usually inside the lot. If the failure is the kerb, layback, or verge — the vehicle crossing on the public road — that is typically a section 138 approval, separate from a DA. We split private slab vs council land before we cut. We do not invent a fee.",
+          question: "After the last easterly I can’t get the car over the washed-out edge in Dee Why — same-day?",
+          answer: "Yes. That is the emergency search we answer — edge gave way, hole at the approach, car bottoms out — not a beachside makeover. Make-safe today; written quote for the lasting rebuild. Call Now 0480 893 502.",
         },
         {
-          question: "Repair or replace — the edge gave way after the last easterly?",
-          answer: "If the base has washed out, filling the hole leaves the next storm to do it again. Make-safe first so you can get the car in; the lasting job is rebuild of the failed strip and the falls. A scaled but still-sound slab is a different call. We will not coat over a hollow edge.",
+          question: "Salt is scaling our Manly / Freshwater slab — repair or spray-on?",
+          answer: "Scaling and open joints from coastal salt need structural repair of failed sections. Spray-on / stencil over a failing base is someone else’s page. We stay on make-safe + rebuild. Request Callback.",
         },
         {
-          question: "Why does only one wheel-track strip keep sinking in Dee Why or Narrabeen?",
+          question: "Narrabeen sandy base keeps settling in one wheel track — will filler hold?",
           answer: "That pattern is usually localised settlement in sandy or variable ground, not a surface scratch. The failed strip needs full-depth rebuild and compaction. A coastal coating on a still-moving sand base repeats the dip after the next wet week. Request Callback with a photo of the strip.",
         },
         {
-          question: "Can you get us using the drive today if we cannot get the car in?",
-          answer: "That is the emergency path. Same-day means we attend before 5:00 pm the day you call, or the emergency call-out fee is waived; you still get the assessment and the written plan. We do not publish the fee in dollars. Call 0480 893 502 if the edge is gone now.",
+          question: "Avalon / Newport steep entry is slippery when wet — urgent?",
+          answer: "Yes if feet or cars cannot use the slope safely. High-grip / panel repair on a failed steep run is safety work — not a decorative stencil. Call Now 0480 893 502 or Request Callback.",
         },
       ],
       councilInfo: "Northern Beaches Council requirements can apply to new or modified vehicle crossings and to works affected by local flood or bushfire planning constraints.",
@@ -792,20 +792,20 @@ export const locations: LocationData[] = [
       ],
       localFaqs: [
         {
-          question: "Do I need City of Parramatta approval for crossover work?",
-          answer: "If the job stays on your private slab, it is usually a property repair. If it alters the vehicle crossing or the road-reserve interface — kerb, layback, verge — City of Parramatta requirements typically apply (section 138 of the Roads Act 1993, separate from a DA). We flag that split before construction. Check council for current fees; we do not publish one here.",
+          question: "The slab heaved off the clay and water is entering the garage in Parramatta — today?",
+          answer: "Yes — that is make-safe first (usable entry, temporary support as needed), then a written quote for panel/joint rebuild built for shrink-swell — not another filler tube. Call Now 0480 893 502.",
         },
         {
-          question: "Why does a Parramatta driveway crack again after being patched?",
+          question: "Same crack opened again after summer in Carlingford — why?",
           answer: "Wianamatta clay is still moving under the patch, and Western Sydney heat opens the same line. Durable repair is structural-depth rebuild and jointing that can take shrink-swell — not surface-only treatment. If the garage is taking water after a heave, that is the tell. Call 0480 893 502 for make-safe if the lip is catching now.",
         },
         {
-          question: "Repair or replace — should I just pour a new coloured driveway?",
-          answer: "Not if the problem is heave or a crushed crossover. A new coloured slab on the same reactive clay, without base and joints, repeats the failure in a nicer colour. Other firms already write that cost-guide page. Ours is: make the drive safe, rebuild the failed section, quote the lasting repair in writing.",
+          question: "Rebuild trucks crushed our Epping crossover — council or private?",
+          answer: "Apron damage from skip bins and trucks is common on rebuild streets (Epping / Eastwood / Carlingford). We assess private lot vs road-reserve crossover and flag City of Parramatta process where needed. Check council for current crossover fees — we do not invent them. Call 0480 893 502.",
         },
         {
-          question: "Can nearby rebuild traffic ruin a crossover that is still new?",
-          answer: "Yes. Repeated truck and skip loading on Epping / Carlingford / Eastwood streets crushes apron edges and ruts the base even on a young drive. Age is not the story; construction traffic is. Strengthening the entry zone is often the repair, not a decorative overlay. Request Callback with the suburb and a photo of the crushed edge.",
+          question: "Should I get a coloured concrete cost guide instead?",
+          answer: "If you want a new decorative pour, that is a different contractor category. If the slab heaved, the lip catches the bumper, or the garage takes water, you need repair / make-safe — that is this page. Call Now 0480 893 502 or Request Callback.",
         },
       ],
       councilInfo: "City of Parramatta governs vehicle crossing and road reserve interface works, so driveway scopes that alter crossovers should be checked for council approval requirements before construction.",

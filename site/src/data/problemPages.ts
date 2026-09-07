@@ -35,11 +35,11 @@ export const problemPages: ProblemPageData[] = [
     slug: "trip-hazard-driveway-repair",
     h1: "Trip Hazard Driveway Repair",
     metaTitle: "Trip Hazard Driveway Repair | Sydney Driveway Repair",
-    description: "A driveway trip hazard is a raised lip, dropped panel, or uneven joint that catches a foot or bumper. Grind flush only if the slab has not moved; if the panel sank or the joint failed, cut-out and rebuild is the lasting fix. Make it safe today, then quote the repair. Call 0480 893 502 or Request Callback.",
+    description: "A driveway trip hazard is a raised lip, dropped panel, or uneven joint that catches a foot or bumper. Diagnose first: grind flush only if the slab has not moved; if the panel sank or the joint failed, cut-out and rebuild is the lasting fix — we are repair/make-safe, not a resin injection specialist. Make it safe today, then quote the repair. Call 0480 893 502 or Request Callback.",
     helper: "Send suburb + what’s wrong (lip at the garage threshold, raised joint, dropped apron, kids catching the edge). No work until you agree.",
     sections: [
       {
-        heading: "What a driveway trip hazard actually is",
+        heading: "Diagnose the trip hazard before choosing a fix",
         blocks: [
           {
             type: "paragraph",
@@ -219,11 +219,11 @@ export const problemPages: ProblemPageData[] = [
     slug: "collapsed-driveway-sydney",
     h1: "Collapsed Driveway Sydney",
     metaTitle: "Collapsed Driveway Sydney | Sydney Driveway Repair",
-    description: "A collapsed driveway in Sydney usually means an edge dropped, a hole opened, or the car bottoms out — not always a whole slab that needs engineering lift. Same-day make-safe gets the drive usable; lasting repair is cut-out and rebuild of the failed section. Resin slab-jacking is a different trade. Call 0480 893 502 or Request Callback.",
+    description: "A collapsed driveway in Sydney usually means an edge dropped, a hole opened, or the car bottoms out — not always a whole slab that needs engineering lift. Diagnose first: same-day make-safe gets the drive usable; lasting repair is cut-out and rebuild of the failed section. We are repair/make-safe, not resin injection / slab-jack specialists. Call 0480 893 502 or Request Callback.",
     helper: "Send suburb + what’s wrong (edge gone, hole under apron, car bottoms out, lip appeared, can’t use the drive). No work until you agree.",
     sections: [
       {
-        heading: "Make-safe vs lift vs replace (answer before the brand)",
+        heading: "Diagnose first: make-safe vs lift vs rebuild",
         blocks: [
           {
             type: "paragraph",

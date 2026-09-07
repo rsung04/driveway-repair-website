@@ -3,16 +3,16 @@ import { X, Check } from "lucide-react";
 export function WhyFixNow() {
   const comparison = [
     {
-      leave: "Cracks spread and repairs get more expensive",
-      fix: "Lower repair cost vs. full replacement later"
+      leave: "The lip keeps catching a foot or bumper before the next school run while the crack spreads toward a full replace",
+      fix: "The drive is usable the same day — kids, cars and deliveries — with a written quote instead of a surprise invoice"
     },
     {
-      leave: "Higher risk of trips, falls and liability",
-      fix: "Safe access for cars, kids and deliveries"
+      leave: "You keep scanning the slab every time the kids walk to the car",
+      fix: "You can watch the kids walk to the car without scanning the slab"
     },
     {
-      leave: "Water damage to sub-base and garage",
-      fix: "Better street appeal and property value"
+      leave: "A dropped edge or failed base keeps taking water and load",
+      fix: "A make-safe plan first, then a lasting repair quote before work starts"
     }
   ];
 
@@ -74,7 +74,7 @@ export function WhyFixNow() {
         {/* Bottom Line */}
         <div className="text-center bg-surface-900 text-white p-6 rounded-lg">
           <p className="text-lg">
-            You'll pay for the problem either way – now or later. Fixing it early usually costs less.
+            Make the walkway safe today; get the lasting repair quote before any work starts.
           </p>
         </div>
       </div>
