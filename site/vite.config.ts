@@ -91,8 +91,8 @@
     })),
   ];
 
-  if (moneyRoutes.length !== 9) {
-    throw new Error(`Expected 9 money routes, found ${moneyRoutes.length}`);
+  if (moneyRoutes.length !== 10) {
+    throw new Error(`Expected 10 money routes, found ${moneyRoutes.length}`);
   }
 
   function escapeHtml(value: string) {
@@ -131,6 +131,7 @@
     { href: '/trip-hazard-driveway-repair', label: 'Trip hazard' },
     { href: '/storm-driveway-repair-sydney', label: 'Storm damage' },
     { href: '/collapsed-driveway-sydney', label: 'Collapsed driveway' },
+    { href: '/emergency-driveway-repair', label: 'Emergency' },
   ];
 
   function renderFirstByteContent(route: (typeof moneyRoutes)[number]) {

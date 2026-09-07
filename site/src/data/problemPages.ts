@@ -277,6 +277,7 @@ export const problemPages: ProblemPageData[] = [
     relatedLinks: [
       { label: "Trip Hazard Driveway Repair", href: "/trip-hazard-driveway-repair" },
       { label: "Storm Driveway Repair Sydney", href: "/storm-driveway-repair-sydney" },
+      { label: "Emergency Driveway Repair Sydney", href: "/emergency-driveway-repair" },
     ],
     steps: [
       { title: "Call Us or Request a Callback", description: "Suburb + what collapsed (photo if you can)." },
@@ -310,6 +311,108 @@ export const problemPages: ProblemPageData[] = [
       { label: "Stormwater plumbers", reason: "Drain jobs belong on the storm page send-away." },
       { label: "Structural engineers certifying foundations", reason: "We repair driveway slabs; we do not certify house underpinning." },
       { label: "New decorative pour / spray-on crews", reason: "Stay on collapse / make-safe / rebuild." },
+    ],
+  },
+  {
+    slug: "emergency-driveway-repair",
+    h1: "24/7 Emergency Driveway Repair Sydney",
+    metaTitle: "24/7 Emergency Driveway Repair Sydney | Sydney Driveway Repair",
+    description: "Emergency driveway repair Sydney homeowners can call when a trip lip, collapsed edge, washout, or dropped slab makes the drive unsafe or unusable. We make it safe, then quote the lasting cut-out and rebuild. Same-day before 5pm is available when we can attend; call 0480 893 502 or Request Callback.",
+    helper: "Send your suburb and what happened (photo if you can). If the issue is a blocked drain or pipe, call a plumber — we repair the failed driveway concrete, not stormwater systems.",
+    sections: [
+      {
+        heading: "When to call emergency driveway repair",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Call when a foot can catch a new lip, a car cannot enter without scraping, an edge has dropped, or a hole has opened under the apron. Urgent does not always mean a full rebuild that day: we can make the area safe first, explain what failed, and quote the lasting repair before work starts.",
+          },
+          {
+            type: "paragraph",
+            text: "Keep people and cars off an unstable section while waiting. Call 0480 893 502 or Request Callback with the suburb, access problem, and a photo if it is safe to take one.",
+          },
+        ],
+      },
+      {
+        heading: "Common emergency driveway repairs",
+        blocks: [
+          {
+            type: "ordered-list",
+            items: [
+              "Trip lip or raised joint catching a foot or bumper — make-safe first; grind-only is not the answer if the slab has moved.",
+              "Collapsed edge, dropped apron, or a hole under the entry — temporary make-safe, then cut-out and rebuild of the failed section.",
+              "Storm washout or undermined base — stabilise the entry and rebuild the concrete after the base is repaired.",
+              "Car cannot enter because the panel broke, dropped, or bottoms out — assess the failed section and give a written repair plan.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Storm damage: make-safe and rebuild",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Storm damage can wash out the base, drop the edge, or open a hole under the apron. We can make the driveway safe and rebuild the failed concrete after the washout is dealt with. A blocked pit, pipe, or stormwater drain belongs with a licensed plumber — we are not plumbers. See Storm Driveway Repair Sydney for the split between drain work and driveway repair.",
+          },
+        ],
+      },
+      {
+        heading: "Insurance claim assistance",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "We can document what failed with site notes and photos and provide a written repair quote for your insurer. Every policy differs, and we do not promise that a claim will be covered or state a cover rate. Ask your insurer what evidence and excess apply; we make-safe and repair if you proceed.",
+          },
+        ],
+      },
+    ],
+    leaveIt: "The trip lip, open hole, or dropped edge gets worse before the next school run, and nobody is sure whether the car can use the drive safely.",
+    fixIt: "A usable, safer entry today where possible, followed by a clear written quote to cut out and rebuild the failed section — not a decorative cover-up.",
+    feeling: "getting the car and family through the entry without testing a damaged slab.",
+    serviceAreas: [
+      { label: "Driveway Repair Woollahra", href: "/driveway-repair-woollahra", note: "steep entries, heritage edges, fig heave" },
+      { label: "Driveway Repair City of Sydney", href: "/driveway-repair-sydney-city", note: "shared lanes, strata aprons, wet bases" },
+      { label: "Driveway Repair North Sydney", href: "/driveway-repair-north-sydney", note: "steep grades, garage lips, edge failure" },
+      { label: "Driveway Repair Northern Beaches", href: "/driveway-repair-northern-beaches", note: "coastal washout and emergency make-safe" },
+      { label: "Driveway Repair Parramatta", href: "/driveway-repair-parramatta", note: "clay movement and crushed crossovers" },
+    ],
+    relatedLinks: [
+      { label: "Trip Hazard Driveway Repair", href: "/trip-hazard-driveway-repair" },
+      { label: "Storm Driveway Repair Sydney", href: "/storm-driveway-repair-sydney" },
+      { label: "Collapsed Driveway Sydney", href: "/collapsed-driveway-sydney" },
+    ],
+    steps: [
+      { title: "Call Us or Request a Callback", description: "Suburb + what failed (photo if you can)." },
+      { title: "Urgency triage", description: "We separate a driveway failure from a blocked drain or pipe job." },
+      { title: "Make-safe assessment", description: "Stabilise or restrict the unsafe section where it is safe to do so." },
+      { title: "Clear quote for lasting repair", description: "Cut-out and rebuild of the failed section. No work until you agree." },
+    ],
+    contactDescription: "Send the suburb and what’s wrong (trip lip, collapse, washout, or car cannot enter). We call back with a make-safe plan and written quote — or send drain work to a plumber. No work until you agree.",
+    issuePlaceholder: "e.g., Storm washout, collapsed edge, car cannot enter...",
+    faqs: [
+      {
+        question: "Can you provide same-day emergency driveway repair in Sydney?",
+        answer: "We can often attend before 5pm for an urgent driveway failure, depending on demand and access. Same-day means make-safe or an assessment where possible; the lasting cut-out and rebuild is quoted before work starts. If we cannot attend that day, we will say so. Call 0480 893 502.",
+      },
+      {
+        question: "Do you waive the emergency call-out fee?",
+        answer: "If we cannot attend before 5pm on the day you call, the emergency call-out fee is waived. You still get the on-site assessment and written plan, and no repair work starts until you agree.",
+      },
+      {
+        question: "Do you repair storm-damaged driveways and blocked drains?",
+        answer: "We repair storm-damaged concrete when the base washed out, an edge dropped, or the apron collapsed. Blocked pits, pipes, CCTV, and stormwater clearing are plumber work; we are not licensed plumbers. See our Storm Driveway Repair Sydney page for the distinction.",
+      },
+      {
+        question: "Can you help with an insurance claim for driveway damage?",
+        answer: "Yes. We can provide site notes, photos, and a written repair quote to support your claim. Every policy differs, so we do not promise cover or quote a cover rate. Ask your insurer about eligibility and excess; we make-safe and repair if you proceed.",
+      },
+    ],
+    notUs: [
+      { label: "Decorative pour and spray resurfacing crews", reason: "This page is urgent make-safe and lasting repair, not a decorative finish." },
+      { label: "Resin injection / slab-jack specialists", reason: "We do not lift whole slabs by injecting resin; we cut out and rebuild failed sections." },
+      { label: "Stormwater plumbers", reason: "Blocked drains, pipes, CCTV, and clearing belong with a plumber." },
+      { label: "Grind-only contractors when the slab moved", reason: "Grinding cannot fix a dropped panel, washed-out base, or reopening joint." },
+      { label: "Emergency excavation as a standalone service", reason: "We repair the driveway failure; we are not a general excavation or plumbing service." },
     ],
   },
 ];
