@@ -4,3 +4,9 @@
 /north-sydney           /driveway-repair-north-sydney       301
 /northern-beaches       /driveway-repair-northern-beaches   301
 /parramatta             /driveway-repair-parramatta         301
+/emergency              /emergency-driveway-repair/        301
+/collapsed-driveway     /collapsed-driveway-sydney/        301
+/trip-hazard            /trip-hazard-driveway-repair/      301
+/storm-damage           /storm-driveway-repair-sydney/     301
+/concrete-driveway      /concrete-driveway-repair/         301
+/pothole-repair         /driveway-pothole-crack-repair/    301

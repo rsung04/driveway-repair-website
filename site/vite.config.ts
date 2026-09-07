@@ -120,6 +120,19 @@
     });
   }
 
+  function heroImageJsonLd() {
+    return JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ImageObject',
+      contentUrl: `${siteUrl}/emergency-driveway-repair-sydney-1584.webp`,
+      url: `${siteUrl}/emergency-driveway-repair-sydney-1584.webp`,
+      name: 'Emergency driveway repair in Sydney',
+      caption: 'Professional driveway technician providing emergency driveway repair in Sydney',
+      width: 1584,
+      height: 672,
+    });
+  }
+
 
   const moneyNav = [
     { href: '/', label: 'Sydney emergency repair' },
@@ -142,6 +155,7 @@
       .join(' · ');
     return `<div id="root">
     <main>
+      <img src="/emergency-driveway-repair-sydney-960.webp" srcset="/emergency-driveway-repair-sydney-640.webp 640w, /emergency-driveway-repair-sydney-960.webp 960w, /emergency-driveway-repair-sydney-1280.webp 1280w, /emergency-driveway-repair-sydney-1584.webp 1584w" alt="Professional driveway technician - White glove emergency service" width="960" height="720" fetchpriority="high" />
       <h1>${escapeHtml(route.h1)}</h1>
       <p>${escapeHtml(route.intro)}</p>
       <p><a href="tel:0480893502">Call Now 0480 893 502</a></p>
@@ -178,7 +192,7 @@
 
     for (const route of moneyRoutes) {
       const routePath = route.slug ? `/${route.slug}` : '/';
-      const faqScript = `\n  <script type="application/ld+json">${faqJsonLd(route.faqs)}</script>`;
+      const faqScript = `\n  <script type="application/ld+json">${faqJsonLd(route.faqs)}</script>\n  <script type="application/ld+json">${heroImageJsonLd()}</script>`;
       const html = template
         .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
         .replace(/<meta name="description"[\s\S]*?\/>/, `<meta name="description" content="${escapeHtml(route.description)}" />`)

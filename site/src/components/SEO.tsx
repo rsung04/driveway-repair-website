@@ -27,7 +27,7 @@ export function SEO({
         "description": `Emergency driveway repair services in ${location.name} and surrounding suburbs. 24/7 rapid response for dangerous cracks, collapses and trip hazards.`,
         "telephone": "+61480893502",
         "url": `https://sydneydrivewayrepair.com/${location.slug}`,
-        "image": "https://sydneydrivewayrepair.com/hero-image.webp",
+        "image": "https://sydneydrivewayrepair.com/emergency-driveway-repair-sydney-1584.webp",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": location.name,
