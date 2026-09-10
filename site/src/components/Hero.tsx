@@ -15,7 +15,7 @@ export function Hero({ onContactClick, location }: HeroProps) {
 
   const subtext = location
     ? `If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day in ${location.name}, then quote the lasting repair before work starts. Serving ${formatSuburbList(location.keySuburbs)}. Call 0480 893 502 or Request Callback.`
-    : "If a lip is catching a foot or bumper — Bellevue Hill fig heave, a Green Square wet apron, a Kirribilli wet grade, a Dee Why washout after an easterly, or Parramatta clay lift — we make the drive safe the same day, then quote the lasting repair. Not a decorative pour brochure. Serving Greater Sydney. Call Now 0480 893 502 or Request Callback.";
+    : "If the slab has dropped, a lip is catching a foot or bumper, or the edge has given way, we make it safe to use the same day, then quote the lasting repair before work starts. You want the driveway safe before school pickup — not a lecture about concrete. Serving Greater Sydney. Call 0480 893 502 or Request Callback.";
 
   const handlePhoneClick = () => {
     if (typeof window !== "undefined" && (window as any).gtag_report_conversion) {

@@ -11,10 +11,10 @@
   const homeFaqs = [
     {
       question: 'Who is this for — and who is it not for?',
-      answer: 'For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0480 893 502 or Request Callback.',
+      answer: 'For a Sydney homeowner whose drive has cracked, sunk, or collapsed: a trip lip, a dropped slab, a car scraping, an edge that gave way. Same-day make-safe, then a written quote for the lasting repair. Not for someone shopping a decorative new pour, not for “got 15 minutes?” browsers, and not for a cheapest-cash patch with no look at the base. If that is you, Call Now 0480 893 502 or Request Callback.',
     },
     {
-      question: "What's the catch on same-day?",
+      question: 'What’s the catch on same-day?',
       answer: 'Same-day means we attend before 5:00 pm the day you call, or the emergency call-out fee is waived. You still get the on-site assessment and the written plan. We do not publish the fee in dollars on this page. No work starts until you agree.',
     },
     {
