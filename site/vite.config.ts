@@ -62,6 +62,8 @@
         description: location.metaDescription ?? `Emergency driveway repair in ${location.name}, ${location.keySuburbs[0]}, ${location.keySuburbs[1]} & surrounds. 24/7 rapid response. Call 0480 893 502 for immediate assistance.`,
         h1: location.h1 ?? `Emergency driveway repair for cracked, sunken, or collapsed drives in ${location.name}`,
         intro: location.richContent?.intro ?? location.metaDescription ?? `Emergency driveway repair in ${location.name}. Call 0480 893 502 or Request Callback.`,
+        lastUpdated: location.richContent?.lastUpdated,
+        comparisonTable: location.richContent?.comparisonTable,
         faqs: [
           ...homeFaqs.map((faq) => {
             if (faq.question === 'How fast can you get here?') {
@@ -149,18 +151,48 @@
     { href: '/driveway-pothole-crack-repair', label: 'Pothole / crack' },
   ];
 
+  function renderComparisonTable(table?: {
+    headers: [string, string, string];
+    rows: { option: string; fits: string; doesNot: string }[];
+  }) {
+    if (!table) return '';
+    const headerRow = `<tr>${table.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr>`;
+    const bodyRows = table.rows
+      .map((row) => `<tr><td>${escapeHtml(row.option)}</td><td>${escapeHtml(row.fits)}</td><td>${escapeHtml(row.doesNot)}</td></tr>`)
+      .join('');
+    return `<table><thead>${headerRow}</thead><tbody>${bodyRows}</tbody></table>`;
+  }
+
+  function renderFaqHtml(faqs: { question: string; answer: string }[]) {
+    if (!faqs.length) return '';
+    const items = faqs
+      .map((faq) => `<div><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></div>`)
+      .join('');
+    return `<section aria-label="FAQs">${items}</section>`;
+  }
+
   function renderFirstByteContent(route: (typeof moneyRoutes)[number]) {
     const nav = moneyNav
       .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
       .join(' · ');
+    const lastUpdated = 'lastUpdated' in route && route.lastUpdated
+      ? `<p>Last updated: ${escapeHtml(route.lastUpdated)}</p>`
+      : '';
+    const comparisonTable = 'comparisonTable' in route
+      ? renderComparisonTable(route.comparisonTable)
+      : '';
+    const faqHtml = renderFaqHtml(route.faqs);
     return `<div id="root">
     <main>
       <img src="/emergency-driveway-repair-sydney-960.webp" srcset="/emergency-driveway-repair-sydney-640.webp 640w, /emergency-driveway-repair-sydney-960.webp 960w, /emergency-driveway-repair-sydney-1280.webp 1280w, /emergency-driveway-repair-sydney-1584.webp 1584w" alt="Professional driveway technician - White glove emergency service" width="960" height="720" fetchpriority="high" />
       <h1>${escapeHtml(route.h1)}</h1>
       <p>${escapeHtml(route.intro)}</p>
+      ${lastUpdated}
+      ${comparisonTable}
       ${(!route.slug || locations.some((location) => location.slug === route.slug)) ? '<p>If a raised joint or dropped panel is catching feet, our <a href="/trip-hazard-driveway-repair/">trip hazard driveway repair</a> guide explains when grinding may help and when the slab needs rebuilding.</p>' : ''}
       <p><a href="tel:0480893502">Call Now 0480 893 502</a></p>
       <p><a href="#contact">Request Callback</a></p>
+      ${faqHtml}
       <form id="contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
         <input type="hidden" name="form-name" value="contact" />
         <p style="display:none"><label>Do not fill this out: <input name="bot-field" /></label></p>

@@ -1,5 +1,10 @@
 export interface RichContent {
   intro: string;
+  lastUpdated?: string;
+  comparisonTable?: {
+    headers: [string, string, string];
+    rows: { option: string; fits: string; doesNot: string }[];
+  };
   localChallenges: {
     title: string;
     description: string;
@@ -93,6 +98,32 @@ export const locations: LocationData[] = [
     ],
     richContent: {
       intro: "Driveway repair in Woollahra means we make a cracked, sunken, or collapsed drive safe the same day, then quote the lasting repair — Heritage Conservation Areas, Moreton Bay fig root heave at Bellevue Hill, salt scaling on Rose Bay and Vaucluse, and tight Paddington lanes. Call 0480 893 502 or Request Callback.",
+      lastUpdated: "10 September 2026",
+      comparisonTable: {
+        headers: ["Option", "When it fits in Woollahra", "When it does not"],
+        rows: [
+        {
+          option: "Same-day make-safe",
+          fits: "Trip lip, dropped apron, collapsed sandstone edge, car scraping",
+          doesNot: "Decorative makeover with no hazard",
+        },
+        {
+          option: "Panel / edge rebuild",
+          fits: "Failed section; match sandstone, brick, or older aggregate",
+          doesNot: "Overlay on a slab still moving from roots",
+        },
+        {
+          option: "Full replace of the failed run",
+          fits: "Base washed out or heaved beyond a panel repair",
+          doesNot: "A new coloured pour to refresh a sound drive",
+        },
+        {
+          option: "Spray-on / stencil overlay",
+          fits: "Almost never on a street-facing HCA drive",
+          doesNot: "If it changes the heritage look or hides movement",
+        },
+        ],
+      },
       localChallenges: [
         {
           title: "Heritage streetscape controls across Woollahra and Paddington",
@@ -254,6 +285,32 @@ export const locations: LocationData[] = [
     ],
     richContent: {
       intro: "Driveway repair in the City of Sydney is same-day make-safe for a trip lip, dropped slab, or collapsed edge on a shared terrace lane or strata apron — then a written quote. Green Square groundwater in Zetland, Waterloo and Alexandria keeps bases wet; courier vans crush short crossovers. Call 0480 893 502 or Request Callback.",
+      lastUpdated: "10 September 2026",
+      comparisonTable: {
+        headers: ["Option", "When it fits in the City of Sydney", "When it does not"],
+        rows: [
+        {
+          option: "Same-day make-safe",
+          fits: "Trip lip, collapsed lane edge, car scraping, standing water at the garage",
+          doesNot: "Shopping a decorative new pour",
+        },
+        {
+          option: "Staged panel / edge rebuild",
+          fits: "Shared lane or strata apron; van turning zones",
+          doesNot: "A week-long shutdown of four terraces",
+        },
+        {
+          option: "Base + drainage rebuild",
+          fits: "Green Square wet ground (Zetland / Waterloo / Alexandria)",
+          doesNot: "Surface filler on a still-saturated base",
+        },
+        {
+          option: "Full replace of the failed run",
+          fits: "Base gone; repeated washout",
+          doesNot: "City-wide driveway makeover copy",
+        },
+        ],
+      },
       localChallenges: [
         {
           title: "Strata and shared-access constraints in dense inner-city blocks",
@@ -421,6 +478,32 @@ export const locations: LocationData[] = [
     ],
     richContent: {
       intro: "Driveway repair in North Sydney is make-safe for a collapsed edge, trip lip, or steep wet entry — not a new coloured pour. Kirribilli and Waverton grades polish and send water to the garage; Neutral Bay brick and Military Road crossovers fail under mixed traffic. Call 0480 893 502 or Request Callback.",
+      lastUpdated: "10 September 2026",
+      comparisonTable: {
+        headers: ["Option", "When it fits in North Sydney", "When it does not"],
+        rows: [
+        {
+          option: "Same-day make-safe",
+          fits: "Trip lip, collapsed edge, car scraping on a wet grade",
+          doesNot: "New decorative / \"aesthetics\" pour",
+        },
+        {
+          option: "Brick relay / edge rebuild",
+          fits: "Neutral Bay / Cremorne shared brick; loose headers",
+          doesNot: "A stencil catalogue finish",
+        },
+        {
+          option: "Regrade + panel rebuild",
+          fits: "Kirribilli / Waverton runoff into the garage",
+          doesNot: "Overlay on a slab that is still moving",
+        },
+        {
+          option: "Crossover interface repair",
+          fits: "Military Road / busy-road entry, levels and falls",
+          doesNot: "Unpermitted kerb works",
+        },
+        ],
+      },
       localChallenges: [
         {
           title: "Steep topography from harbour foreshore to ridge suburbs",
@@ -630,6 +713,32 @@ export const locations: LocationData[] = [
     ],
     richContent: {
       intro: "Driveway repair on the Northern Beaches is emergency make-safe after an easterly: a washed-out edge, trip lip, or driveway you cannot get the car into — not a spray-pave makeover. Salt and ponding at Dee Why and Manly scale the slab; sandy bases in Narrabeen settle. Call 0480 893 502 or Request Callback.",
+      lastUpdated: "10 September 2026",
+      comparisonTable: {
+        headers: ["Option", "When it fits on the Northern Beaches", "When it does not"],
+        rows: [
+        {
+          option: "Same-day make-safe",
+          fits: "Washed-out edge, trip lip, can't get the car in after an easterly",
+          doesNot: "Colour / spray-on makeover",
+        },
+        {
+          option: "Full-depth strip rebuild",
+          fits: "Wheel-track settlement on sandy Narrabeen / Warriewood ground",
+          doesNot: "Filling the hole and leaving the sand base",
+        },
+        {
+          option: "Failed-section replace",
+          fits: "Salt-scaled, ravelled concrete that has already failed",
+          doesNot: "Coating over a moving or hollow edge",
+        },
+        {
+          option: "Drainage / falls correction",
+          fits: "Ponding sending water to the garage after coastal rain",
+          doesNot: "A plumber's blocked-pipe job (send those away)",
+        },
+        ],
+      },
       localChallenges: [
         {
           title: "Marine salt exposure from Manly to Palm Beach",
@@ -755,6 +864,32 @@ export const locations: LocationData[] = [
     ],
     richContent: {
       intro: "Driveway repair in Parramatta is make-safe when Wianamatta clay heaves the slab, summer heat opens the same crack, or rebuild traffic crushes the crossover in Epping, Carlingford or North Rocks — not a coloured-concrete cost guide. We rebuild the failed section, then quote the lasting repair. Call 0480 893 502 or Request Callback.",
+      lastUpdated: "10 September 2026",
+      comparisonTable: {
+        headers: ["Option", "When it fits in Parramatta", "When it does not"],
+        rows: [
+        {
+          option: "Same-day make-safe",
+          fits: "Heaved lip, crushed crossover, car scraping, water at the garage",
+          doesNot: "Shopping a coloured new driveway",
+        },
+        {
+          option: "Panel rebuild + joints",
+          fits: "Seasonal shrink-swell; summer crack that returns",
+          doesNot: "Surface-only filler on moving clay",
+        },
+        {
+          option: "Crossover / apron strengthen",
+          fits: "Epping / Carlingford / North Rocks rebuild-traffic crush",
+          doesNot: "Asphalt pothole overlay (different trade)",
+        },
+        {
+          option: "Old-to-new tie-in",
+          fits: "Epping / Eastwood aged slab meeting a new section",
+          doesNot: "A stencil / colour catalogue",
+        },
+        ],
+      },
       localChallenges: [
         {
           title: "Reactive clay shrink-swell movement across the LGA",
