@@ -84,6 +84,9 @@ export function ProblemPage({ page }: ProblemPageProps) {
           <div className="mx-auto max-w-4xl">
             <h1 className="text-3xl text-surface-900 sm:text-4xl md:text-5xl">{page.h1}</h1>
             <p className="mt-6 max-w-3xl text-lg text-surface-700">{page.description}</p>
+            {page.lastUpdated && (
+              <p className="mt-3 text-sm text-surface-600">Last updated: {page.lastUpdated}</p>
+            )}
 
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <Button

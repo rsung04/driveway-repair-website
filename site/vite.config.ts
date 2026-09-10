@@ -83,14 +83,30 @@
           ...(location.richContent?.localFaqs ?? []),
         ],
       })),
-    ...problemPages.map(({ slug, h1, metaTitle, description, faqs }) => ({
-      slug,
-      title: metaTitle,
-      description,
-      h1,
-      intro: description,
-      faqs,
-    })),
+    ...problemPages.map((page) => {
+      const tableBlock = page.sections
+        .flatMap((section) => section.blocks)
+        .find((block) => block.type === 'table' && block.headers?.length === 3 && block.rows?.length);
+      return {
+        slug: page.slug,
+        title: page.metaTitle,
+        description: page.description,
+        h1: page.h1,
+        intro: page.description,
+        lastUpdated: page.lastUpdated,
+        comparisonTable: tableBlock
+          ? {
+              headers: tableBlock.headers as [string, string, string],
+              rows: (tableBlock.rows ?? []).map(([option, fits, doesNot]) => ({
+                option,
+                fits,
+                doesNot,
+              })),
+            }
+          : undefined,
+        faqs: page.faqs,
+      };
+    }),
   ];
 
   if (moneyRoutes.length !== 12) {

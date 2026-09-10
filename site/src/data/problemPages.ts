@@ -16,6 +16,7 @@ export interface ProblemPageData {
   h1: string;
   metaTitle: string;
   description: string;
+  lastUpdated?: string;
   helper: string;
   sections: ProblemPageSection[];
   leaveIt: string;
@@ -35,7 +36,8 @@ export const problemPages: ProblemPageData[] = [
     slug: "trip-hazard-driveway-repair",
     h1: "Trip Hazard Driveway Repair",
     metaTitle: "Trip Hazard Driveway Repair | Sydney Driveway Repair",
-    description: "For Sydney homeowners, a driveway trip hazard is a raised lip, dropped panel, or uneven joint that catches a foot or bumper. Diagnose first: grind flush only if the slab has not moved; if the panel sank or the joint failed, cut-out and rebuild is the lasting fix — we are repair/make-safe, not a resin injection specialist. Make it safe today, then quote the repair. Call 0480 893 502 or Request Callback.",
+    description: "A driveway trip hazard is a raised lip, dropped panel, or uneven joint that catches a foot or bumper — including kids, visitors, and couriers. Grind flush only if the slab has not moved; if the panel sank or the joint failed, cut-out and rebuild is the lasting fix. Make it safe today, then get a written quote. Call Now 0480 893 502 or Request Callback.",
+    lastUpdated: "10 September 2026",
     helper: "Send suburb + what’s wrong (lip at the garage threshold, raised joint, dropped apron, kids catching the edge). No work until you agree.",
     sections: [
       {
@@ -43,7 +45,7 @@ export const problemPages: ProblemPageData[] = [
         blocks: [
           {
             type: "paragraph",
-            text: "A trip lip on a driveway is usually a height change at a joint, a panel that has dropped relative to its neighbour, a heaved edge, or a failed apron where the car bottoms out or a foot catches. It is not “cosmetic roughness.” Liability for visitors, kids, couriers, and strata common property starts the moment someone can catch that edge.",
+            text: "A trip lip on a driveway is usually a height change at a joint, a panel that has dropped relative to its neighbour, a heaved edge, or a failed apron where the car bottoms out or a foot catches. It is not “cosmetic roughness.” Kids running to the car, visitors with groceries, couriers at the door, and strata common property all create liability the moment someone can catch that edge — make the walkway safe first, then fix the cause.",
           },
           {
             type: "paragraph",
@@ -85,6 +87,11 @@ export const problemPages: ProblemPageData[] = [
       { label: "Driveway Repair Northern Beaches", href: "/driveway-repair-northern-beaches", note: "coastal edge failure, washout lips (emergency repair, not resurfacing)" },
       { label: "Driveway Repair Parramatta", href: "/driveway-repair-parramatta", note: "clay heave lips, crushed crossovers" },
     ],
+    relatedLinks: [
+      { label: "Storm Driveway Repair Sydney", href: "/storm-driveway-repair-sydney" },
+      { label: "Collapsed Driveway Sydney", href: "/collapsed-driveway-sydney" },
+      { label: "Emergency Driveway Repair Sydney", href: "/emergency-driveway-repair" },
+    ],
     steps: [
       { title: "Call Us or Request a Callback", description: "Suburb + where the lip is (photo if you can)." },
       { title: "On-site call", description: "Has the slab moved, or is it only a high ridge?" },
@@ -95,12 +102,20 @@ export const problemPages: ProblemPageData[] = [
     issuePlaceholder: "e.g., Trip lip at garage threshold, dropped apron...",
     faqs: [
       {
-        question: "Is grinding enough for a driveway trip hazard?",
-        answer: "Only if the slab has not moved and the hazard is a thin high ridge. If a panel has dropped, the base has washed out, or the joint keeps reopening, grinding leaves the same lip next season. In Parramatta, clay movement can create the height difference, so we check the base before recommending a repair. We call that on site — grind-only goes to a grinder; movement gets a cut-out and rebuild quote.",
+        question: "Is grinding enough for a trip lip?",
+        answer: "If the lip is small and the slab has not moved, grinding can remove the catch. If the panel has dropped or the base is soft, grinding only hides the problem for a while. We diagnose grind-vs-rebuild on site — Call Now 0480 893 502.",
       },
       {
         question: "Who is liable if someone trips on my driveway?",
-        answer: "Property owners and strata managers can be liable when a known lip catches a visitor, courier, or resident. Make the walkway safe first, then fix the cause. We do not give legal advice — we make the edge safe to use and quote the lasting repair. Call 0480 893 502 if the lip is already catching feet.",
+        answer: "Property owners and strata managers can be liable when a known lip catches a kid, visitor, courier, or resident. Make the walkway safe first, then fix the cause. We do not give legal advice — we make the edge safe to use and quote the lasting repair. Call 0480 893 502 if the lip is already catching feet.",
+      },
+      {
+        question: "Can you just patch the cracks?",
+        answer: "Sometimes yes. If the slab is still flat and not moving, we can repair the cracks and make it safe. If the base has failed or the edge has dropped, a surface patch will come back. We look first, then give you a written quote — Call Now 0480 893 502 or Request Callback.",
+      },
+      {
+        question: "What will it cost?",
+        answer: "We do not publish a fake online price for every driveway. Emergency make-safe is assessed on site; lasting repair gets a written quote before work starts. Call 0480 893 502 with the suburb and a photo of the lip.",
       },
       {
         question: "Can you make a trip lip safe the same day?",
@@ -123,7 +138,8 @@ export const problemPages: ProblemPageData[] = [
     slug: "storm-driveway-repair-sydney",
     h1: "Storm Driveway Repair Sydney",
     metaTitle: "Storm Driveway Repair Sydney | Sydney Driveway Repair",
-    description: "After a storm, driveway repair means the edge washed out, the base undermined, or a hole under the apron — not a blocked stormwater pipe. Call a plumber if the drain backs up; call a driveway crew if the concrete failed. We make it safe the same day, then quote the lasting repair. Call 0480 893 502 or Request Callback.",
+    description: "After a storm, driveway repair means the edge washed out, the base undermined, or a hole under the apron — not a blocked stormwater pipe. Call a plumber if the drain backs up; call us if the concrete failed. Same-day make-safe, then a written quote for the lasting rebuild. Call Now 0480 893 502 or Request Callback.",
+    lastUpdated: "10 September 2026",
     helper: "Send suburb + what’s wrong (washed-out edge, hole under the apron, undermined base, car can’t enter). If the pipe is blocked, say so — we will send that job to a plumber.",
     sections: [
       {
@@ -142,7 +158,7 @@ export const problemPages: ProblemPageData[] = [
           },
           {
             type: "paragraph",
-            text: "Sydney Driveway Repair takes the second case: same-day make-safe so you can use the drive, then a written quote for the lasting rebuild. Call 0480 893 502 or Request Callback.",
+            text: "Sydney Driveway Repair takes the second case: same-day make-safe so you can use the drive, then re-base and rebuild the undermined section with a written quote. A skim over a hollow base fails again after the next wet week. Call Now 0480 893 502 or Request Callback.",
           },
           {
             type: "paragraph",
@@ -181,6 +197,11 @@ export const problemPages: ProblemPageData[] = [
       { label: "Driveway Repair City of Sydney", href: "/driveway-repair-sydney-city", note: "Green Square wet base, shared-lane apron failure" },
       { label: "Driveway Repair Parramatta", href: "/driveway-repair-parramatta", note: "clay shrink-swell after wet/dry cycles, crushed crossovers" },
     ],
+    relatedLinks: [
+      { label: "Trip Hazard Driveway Repair", href: "/trip-hazard-driveway-repair" },
+      { label: "Collapsed Driveway Sydney", href: "/collapsed-driveway-sydney" },
+      { label: "Emergency Driveway Repair Sydney", href: "/emergency-driveway-repair" },
+    ],
     steps: [
       { title: "Call Us or Request a Callback", description: "Suburb + storm damage (photo if you can). Say if the pit is blocked." },
       { title: "Triage on the call", description: "Drain job → send to plumber. Slab washout → on-site make-safe assessment." },
@@ -191,20 +212,28 @@ export const problemPages: ProblemPageData[] = [
     issuePlaceholder: "e.g., Washed-out edge, hole under apron, blocked pit...",
     faqs: [
       {
+        question: "The edge washed out after a storm — is that a plumber?",
+        answer: "If water is backing up from a blocked drain, you need a plumber. If the driveway base washed out and the slab edge collapsed, that is our job — make it safe, then quote the lasting repair. We are not licensed stormwater plumbers. Call Now 0480 893 502.",
+      },
+      {
         question: "Is a flooded driveway after a storm a plumbing job or a concreting job?",
-        answer: "If water is backing up from the pit or pipe, call a stormwater plumber. If the slab edge washed out, the base is hollow, or a hole opened under the apron, that is driveway repair. We take the concrete failure — we are not licensed plumbers and will send drain jobs away.",
+        answer: "If water is backing up from the pit or pipe, call a stormwater plumber. If the slab edge washed out, the base is hollow, or a hole opened under the apron, that is driveway repair. We take the concrete failure — we will send drain jobs away.",
       },
       {
         question: "Can you repair a driveway that washed out in a storm the same day?",
         answer: "We can often make the entry safe the same day so the car can get in, then quote the lasting re-base and rebuild in writing. Full pour of a large washout may need a short stage. Call 0480 893 502 with suburb + a photo.",
       },
       {
-        question: "Do you fix blocked stormwater under the driveway?",
-        answer: "No. CCTV, clearing, relining, and dig-up to the pipe are plumber work. Some plumbers cut the driveway to reach the drain and reinstate later. If your only problem is the blocked pipe, do not book us. If the slab itself collapsed from scour, Request Callback.",
+        question: "Do I need a full new driveway?",
+        answer: "Not always. If only one edge or panel washed out, repair or a limited cut-out can be enough. If the base failed across a long run, replacement of that section is the honest fix. We will say which — we do not upsell a decorative new pour if you only need make-safe.",
       },
       {
-        question: "Will insurance cover storm driveway damage?",
-        answer: "That depends on your policy and whether the failure is stormwater, flood, or gradual base failure — we do not invent claim statistics or promise cover. We document what failed on site and quote the repair. Ask your insurer; we make the drive safe and rebuild the washed-out section if you proceed.",
+        question: "What will it cost?",
+        answer: "We do not publish a fake online price for every storm washout. Emergency make-safe is assessed on site; lasting re-base and rebuild gets a written quote before work starts. Call 0480 893 502 with suburb and a photo.",
+      },
+      {
+        question: "Do you fix blocked stormwater under the driveway?",
+        answer: "No. CCTV, clearing, relining, and dig-up to the pipe are plumber work. Some plumbers cut the driveway to reach the drain and reinstate later. If your only problem is the blocked pipe, do not book us. If the slab itself collapsed from scour, Request Callback.",
       },
     ],
     notUs: [
@@ -219,11 +248,12 @@ export const problemPages: ProblemPageData[] = [
     slug: "collapsed-driveway-sydney",
     h1: "Collapsed Driveway Sydney",
     metaTitle: "Collapsed Driveway Sydney | Sydney Driveway Repair",
-    description: "A collapsed driveway in Sydney usually means an edge dropped, a hole opened, or the car bottoms out — not always a whole slab that needs engineering lift. Diagnose first: same-day make-safe gets the drive usable; lasting repair is cut-out and rebuild of the failed section. We are repair/make-safe, not resin injection / slab-jack specialists. Call 0480 893 502 or Request Callback.",
+    description: "A collapsed driveway in Sydney usually means an edge dropped, a hole opened, or the car bottoms out — not always a whole slab that needs engineering lift. Same-day make-safe gets the drive usable; lasting repair is cut-out and rebuild of the failed section. We do not pretend to sell resin slab-jacking. Call Now 0480 893 502 or Request Callback.",
+    lastUpdated: "10 September 2026",
     helper: "Send suburb + what’s wrong (edge gone, hole under apron, car bottoms out, lip appeared, can’t use the drive). No work until you agree.",
     sections: [
       {
-        heading: "Diagnose first: make-safe vs lift vs rebuild",
+        heading: "Make-safe vs lift vs replace",
         blocks: [
           {
             type: "paragraph",
@@ -289,16 +319,24 @@ export const problemPages: ProblemPageData[] = [
     issuePlaceholder: "e.g., Collapsed edge, hole under apron, car bottoms out...",
     faqs: [
       {
+        question: "Can you lift a sunken slab like the resin companies?",
+        answer: "We make the drive safe to use and rebuild failed concrete. Uniform sink on a sound slab is often a resin / slab-jack engineer’s job — we will say so. We do not pretend to be Mainmark. Call Now 0480 893 502.",
+      },
+      {
         question: "What should I do if my driveway collapses?",
         answer: "Keep people and cars off the failed section. Photograph the drop or hole. Call for same-day make-safe if the entry is unsafe, then get a written quote for lasting rebuild. If the whole intact slab has sunk evenly, ask whether resin lift (a different trade) fits better than cut-out. Call 0480 893 502.",
       },
       {
-        question: "Is slab jacking the same as driveway repair?",
-        answer: "No. Slab jacking / resin injection lifts a sunken slab without replacing it — engineering specialists do that. Driveway repair here means make-safe plus cut-out and rebuild of a failed edge, hole, or panel. We explain lift-vs-rebuild on the call; we do not sell resin injection as our method.",
+        question: "Do I need a full new driveway?",
+        answer: "Not always. If the concrete is sound around a failed edge or panel, repair or a limited cut-out can be enough. If it is heaving, washed out, or the panels have moved, replacement of that section is the honest fix. We will say which — we do not upsell a decorative new pour if you only need make-safe.",
+      },
+      {
+        question: "What will it cost?",
+        answer: "We do not publish a fake online price for every collapsed driveway. Emergency make-safe is assessed on site; lasting cut-out and rebuild gets a written quote before work starts. Call 0480 893 502 with suburb and a photo.",
       },
       {
         question: "Can you make a collapsed driveway safe the same day?",
-        answer: "Often yes when the failure is a dropped edge, open hole, or failed apron that blocks the car. Make-safe gets the drive usable; lasting rebuild is quoted in writing before that work starts. Large structural collapse may need staging. Request Callback.",
+        answer: "Yes when the failure is a dropped edge, open hole, or failed apron that blocks the car. Make-safe gets the drive usable; lasting rebuild is quoted in writing before that work starts. Large structural collapse may need staging. Request Callback.",
       },
       {
         question: "Do you underpin or inject resin under driveways?",
