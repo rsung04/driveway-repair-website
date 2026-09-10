@@ -18,6 +18,32 @@ export function LocalContent({ location }: LocalContentProps) {
             Driveway Repair in {location.name} — Local Expertise You Can Trust
           </h2>
           <p className="text-lg text-surface-700">{richContent.intro}</p>
+          {richContent.lastUpdated && (
+            <p className="mt-3 text-sm text-surface-600">Last updated: {richContent.lastUpdated}</p>
+          )}
+
+          {richContent.comparisonTable && (
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full border-collapse border border-surface-300 text-left text-sm sm:text-base">
+                <thead>
+                  <tr className="bg-surface-100">
+                    <th className="border border-surface-300 px-3 py-2 font-semibold text-surface-900">{richContent.comparisonTable.headers[0]}</th>
+                    <th className="border border-surface-300 px-3 py-2 font-semibold text-surface-900">{richContent.comparisonTable.headers[1]}</th>
+                    <th className="border border-surface-300 px-3 py-2 font-semibold text-surface-900">{richContent.comparisonTable.headers[2]}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {richContent.comparisonTable.rows.map((row) => (
+                    <tr key={row.option}>
+                      <td className="border border-surface-300 px-3 py-2 text-surface-900 font-medium">{row.option}</td>
+                      <td className="border border-surface-300 px-3 py-2 text-surface-700">{row.fits}</td>
+                      <td className="border border-surface-300 px-3 py-2 text-surface-700">{row.doesNot}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
 
           {richContent.councilInfo && (
             <div className="mt-8 bg-surface-50 border border-surface-200 rounded-lg p-6">
