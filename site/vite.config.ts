@@ -158,6 +158,7 @@
       <img src="/emergency-driveway-repair-sydney-960.webp" srcset="/emergency-driveway-repair-sydney-640.webp 640w, /emergency-driveway-repair-sydney-960.webp 960w, /emergency-driveway-repair-sydney-1280.webp 1280w, /emergency-driveway-repair-sydney-1584.webp 1584w" alt="Professional driveway technician - White glove emergency service" width="960" height="720" fetchpriority="high" />
       <h1>${escapeHtml(route.h1)}</h1>
       <p>${escapeHtml(route.intro)}</p>
+      ${(!route.slug || locations.some((location) => location.slug === route.slug)) ? '<p>If a raised joint or dropped panel is catching feet, our <a href="/trip-hazard-driveway-repair/">trip hazard driveway repair</a> guide explains when grinding may help and when the slab needs rebuilding.</p>' : ''}
       <p><a href="tel:0480893502">Call Now 0480 893 502</a></p>
       <p><a href="#contact">Request Callback</a></p>
       <form id="contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">

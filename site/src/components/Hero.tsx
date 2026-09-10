@@ -61,6 +61,14 @@ export function Hero({ onContactClick, location }: HeroProps) {
               {subtext}
             </p>
 
+            {(!location || location.richContent) && (
+              <p className="text-lg text-surface-700">
+                If a raised joint or dropped panel is catching feet, our{" "}
+                <a href="/trip-hazard-driveway-repair/" className="text-primary-600 hover:text-primary-700 underline">trip hazard driveway repair</a>{" "}
+                guide explains when grinding may help and when the slab needs rebuilding.
+              </p>
+            )}
+
             <ul className="space-y-3" aria-label="Key benefits">
               <li className="flex items-start gap-3 text-surface-900">
                 <svg

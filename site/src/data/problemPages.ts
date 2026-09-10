@@ -35,7 +35,7 @@ export const problemPages: ProblemPageData[] = [
     slug: "trip-hazard-driveway-repair",
     h1: "Trip Hazard Driveway Repair",
     metaTitle: "Trip Hazard Driveway Repair | Sydney Driveway Repair",
-    description: "A driveway trip hazard is a raised lip, dropped panel, or uneven joint that catches a foot or bumper. Diagnose first: grind flush only if the slab has not moved; if the panel sank or the joint failed, cut-out and rebuild is the lasting fix — we are repair/make-safe, not a resin injection specialist. Make it safe today, then quote the repair. Call 0480 893 502 or Request Callback.",
+    description: "For Sydney homeowners, a driveway trip hazard is a raised lip, dropped panel, or uneven joint that catches a foot or bumper. Diagnose first: grind flush only if the slab has not moved; if the panel sank or the joint failed, cut-out and rebuild is the lasting fix — we are repair/make-safe, not a resin injection specialist. Make it safe today, then quote the repair. Call 0480 893 502 or Request Callback.",
     helper: "Send suburb + what’s wrong (lip at the garage threshold, raised joint, dropped apron, kids catching the edge). No work until you agree.",
     sections: [
       {
@@ -96,7 +96,7 @@ export const problemPages: ProblemPageData[] = [
     faqs: [
       {
         question: "Is grinding enough for a driveway trip hazard?",
-        answer: "Only if the slab has not moved and the hazard is a thin high ridge. If a panel has dropped, the base has washed out, or the joint keeps reopening, grinding leaves the same lip next season. We call that on site — grind-only goes to a grinder; movement gets a cut-out and rebuild quote.",
+        answer: "Only if the slab has not moved and the hazard is a thin high ridge. If a panel has dropped, the base has washed out, or the joint keeps reopening, grinding leaves the same lip next season. In Parramatta, clay movement can create the height difference, so we check the base before recommending a repair. We call that on site — grind-only goes to a grinder; movement gets a cut-out and rebuild quote.",
       },
       {
         question: "Who is liable if someone trips on my driveway?",

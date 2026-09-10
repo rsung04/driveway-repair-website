@@ -20,6 +20,7 @@
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=31536000"
 
 # Twilio voice webhook (must be before SPA catch-all)
 [[redirects]]
